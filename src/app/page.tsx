@@ -8,38 +8,34 @@ import { RoleType } from "@/types/game";
 import GameSet from "@/components/GameSet/GameSet";
 import { rolesData } from "@/data/data";
 
+const BG_URLS = [
+  // "https://media.giphy.com/media/3etP8HqLPVixUc9Y3s/giphy.gif",
+  // "https://media.giphy.com/media/BmmfETghGOPrW/giphy.gif",
+  "https://media.giphy.com/media/26Ec7TKFZ9XED3MM8/giphy.gif",
+  "https://media.giphy.com/media/5h9jqglckLc1HQbPvT/giphy.gif",
+  "https://media.giphy.com/media/fFxiqBNam2UtAYa9Oi/giphy.gif",
+  "https://media.giphy.com/media/fvxUIwNJRaj8UQe3ti/giphy.gif",
+  "https://media.giphy.com/media/KBPu6znQu2DsgPvOpm/giphy.gif",
+  "https://media.giphy.com/media/jU2wR5WIzi1wnoHJkx/giphy.gif",
+  "https://media.giphy.com/media/i8ztw1wqGxqRysjAnZ/giphy.gif"
+];
+
 export default function Home() {
   const [role, setRole] = useState<RoleType| ''>('');
+  const [randomIndex] = useState(() => Math.floor(Math.random() * BG_URLS.length));
   const router = useRouter();
   // sessionStorage.setItem('refresh', 'false');
-
+  
   const handleGameStart = () => {
     if (!role) {alert('라인을 선택해주세요.');return;}
     router.push(`/game?role=${role}`);
-  }
-
-  const bgUrls = [
-    // "https://media.giphy.com/media/3etP8HqLPVixUc9Y3s/giphy.gif",
-    // "https://media.giphy.com/media/BmmfETghGOPrW/giphy.gif",
-    "https://media.giphy.com/media/26Ec7TKFZ9XED3MM8/giphy.gif",
-    "https://media.giphy.com/media/5h9jqglckLc1HQbPvT/giphy.gif",
-    "https://media.giphy.com/media/fFxiqBNam2UtAYa9Oi/giphy.gif",
-    "https://media.giphy.com/media/fvxUIwNJRaj8UQe3ti/giphy.gif",
-    "https://media.giphy.com/media/KBPu6znQu2DsgPvOpm/giphy.gif",
-    "https://media.giphy.com/media/jU2wR5WIzi1wnoHJkx/giphy.gif",
-    "https://media.giphy.com/media/i8ztw1wqGxqRysjAnZ/giphy.gif"
-  ];
-
-  const getRandomBg = () => {
-    const randomIndex = Math.floor(Math.random() * bgUrls.length);
-    return bgUrls[randomIndex];
   }
 
   return (
     // <div className="w-full h-full flex flex-row justify-between items-center"
     <div className="w-full h-full justify-between items-center overflow-auto"
       style={{
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(${getRandomBg()})`,
+        backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(${BG_URLS[randomIndex]})`,
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat"
