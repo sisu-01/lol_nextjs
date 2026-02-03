@@ -1,26 +1,41 @@
-// src/utils/sfx.ts
-const sfx = {
-  correct: new Audio('/audio/correct.mp3'),
-  wrong: new Audio('/audio/wrong.mp3'),
+// 1. Audio 객체를 담을 캐시 변수 (브라우저 메모리에 유지)
+const cache: Record<string, HTMLAudioElement> = {};
+
+const getAudio = (path: string) => {
+  if (typeof window === 'undefined') return null; // 서버 사이드 방어
+  if (!cache[path]) {
+    cache[path] = new Audio(path);
+  }
+  return cache[path];
 };
 
-export const playSfx = (name: keyof typeof sfx): Promise<void> => {
+export const playSfx = (name: 'correct' | 'wrong'): Promise<void> => {
   return new Promise((resolve) => {
-    const sound = sfx[name];
+    const sound = getAudio(`/audio/${name}.mp3`);
+
+    // 서버 환경이거나 Audio 생성이 불가능할 경우 바로 종료
+    if (!sound) {
+      resolve();
+      return;
+    }
+
     sound.currentTime = 0;
-    
-    // 소리가 끝났을 때 실행될 이벤트
+
     sound.onended = () => {
       resolve();
     };
 
-    setTimeout(() => {
+    // 안전장치 타이머
+    const timeout = setTimeout(() => {
       resolve();
     }, 800);
 
-    sound.play().catch((e) => {
+    sound.play().then(() => {
+        // 성공적으로 재생 시작 시 타이머는 그대로 유지하거나 별도 처리
+    }).catch((e) => {
       console.warn("자동 재생 차단됨:", e);
-      resolve(); // 에러 발생 시에도 게임은 진행되어야 하므로 resolve 호출
+      clearTimeout(timeout);
+      resolve();
     });
-  })
-}
+  });
+};
