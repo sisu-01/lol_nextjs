@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { dDragonContext } from "@/context/dDragonContext";
 import WinRate from "../../WinRate/WinRate";
 
@@ -17,10 +17,6 @@ interface ChampionCardProps {
 const ChampionCard = ({ chmpId, winRate, isPending, selectId, handleHoverId, handleSelectId, winRateAnimeEnd, brightness }: ChampionCardProps) => {
   const chmpDataJson = useContext(dDragonContext);
   const [animeDone, setAnimeDone] = useState<boolean>(false);
-  
-  useEffect(() => {
-    setAnimeDone(false);
-  }, [selectId, setAnimeDone]);
   
   if (!chmpDataJson) return null;
 
