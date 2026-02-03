@@ -51,7 +51,7 @@ export default function Home() {
 
       <div className="w-full flex flex-col justify-center items-center gap-5 text-center px-4">
         <div>
-          <Image src="/logo.svg" width={100} height={100} className="h-[200px]" alt="도전! 롤든벨" />
+          <Image src="/logo.svg" width={100} height={100} className="h-50" alt="도전! 롤든벨" />
         </div>
         <div>
           <h1>

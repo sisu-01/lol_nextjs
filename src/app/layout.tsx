@@ -56,7 +56,7 @@ export default function RootLayout({
       <body className={`${notoFont.variable} ${dokdoFont.variable} antialiased`}>
         <div className="flex flex-col h-dvh">
           <Header />
-          <main className="absolute top-[45px] sm:top-[95px] bottom-[45px] sm:bottom-[95px] overflow-hidden flex-1 w-full">
+          <main className="absolute top-11.25 sm:top-23.75 bottom-11.25 sm:bottom-23.75 overflow-hidden flex-1 w-full">
             {children}
           </main>
           <Footer />
