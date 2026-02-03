@@ -18,9 +18,6 @@ const Selector = ({ matchProps, isPending, setIsPending, isCorrectChampion }: Se
   
   useEffect(() => {
     selectIdRef.current = selectId;
-    if (!isPending) {
-      setSelectId(null);
-    }
   }, [isPending, selectId]);
 
   const handleHoverId = (id: number | null) => { if (!isPending) setHoverId(id); }
