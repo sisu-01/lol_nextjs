@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'About us',
+  description: 'We strive to add value to our customers lives and create a better future through innovative technology.',
+}
+
 const AboutPage = () => {
   return (
     <div className="p-8 max-w-4xl mx-auto text-gray-800 leading-relaxed overflow-y-auto h-full">

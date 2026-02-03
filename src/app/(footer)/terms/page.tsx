@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'Terms',
+  description: 'These terms define the conditions of use and the rights and obligations between the company and our users.',
+}
+
 const TermsPage = () => {
   return (
     <div className="p-8 max-w-4xl mx-auto text-gray-800 leading-relaxed overflow-y-auto h-full">

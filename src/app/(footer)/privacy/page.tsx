@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'Privacy Policy',
+  description: 'We transparently guide you through our practices and your rights to protect your valuable personal information.',
+}
+
 const PrivacyPage = () => {
   return (
     <div className="p-8 max-w-4xl mx-auto text-gray-800 leading-relaxed overflow-y-auto h-full">

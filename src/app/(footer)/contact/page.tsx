@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'Contact us',
+  description: 'Please contact our team at any time for inquiries or assistance regarding our services.',
+}
+
 const ContactPage = () => {
   return (
     <div className="p-8 max-w-4xl mx-auto text-gray-800 leading-relaxed overflow-y-auto h-full">
