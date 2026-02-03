@@ -1,0 +1,70 @@
+import { MatchDataType } from "@/types/game";
+import { useCallback, useEffect, useRef, useState } from "react";
+import ChampionCard from "../ChampionCard/ChampionCard";
+import { CHECK_WAIT } from "@/constants/time";
+
+interface SelectorProps {
+  matchProps: MatchDataType;
+  isPending: boolean;
+  setIsPending: (value: boolean) => void;
+  isCorrectChampion: (id: number) => void;
+}
+
+const Selector = ({ matchProps, isPending, setIsPending, isCorrectChampion }: SelectorProps) => {
+  const [hoverId, setHoverId] = useState<number|null>(null);
+  const [selectId, setSelectId] = useState<number|null>(null);
+  const selectIdRef = useRef<number | null>(null);
+  const [, setDoneCount] = useState(0);
+  
+  useEffect(() => {
+    selectIdRef.current = selectId;
+    if (!isPending) {
+      setSelectId(null);
+    }
+  }, [isPending, selectId]);
+
+  const handleHoverId = (id: number | null) => { if (!isPending) setHoverId(id); }
+  const handleSelectId = (id: number) => {
+    if (isPending || selectId) return;
+    setHoverId(null);
+    setSelectId(id);
+    setIsPending(true);
+  }
+
+  const winRateAnimeEnd = useCallback(() => {
+    setDoneCount(prev => {
+      const next = prev + 1;
+      if (next === 2) {
+        setDoneCount(0);
+        setTimeout(() => {
+          if (!selectIdRef.current) return;
+          isCorrectChampion(selectIdRef.current);
+        }, CHECK_WAIT);
+      }
+      return next;
+    });   
+  }, [isCorrectChampion]);
+
+  const chmpsArray = [matchProps.chmpA, matchProps.chmpB];
+
+  return (
+    <>
+      {chmpsArray.map(chmp => (
+        <ChampionCard
+          key={chmp.id}
+          chmpId={chmp.id}
+          winRate={chmp.winRate}
+          selectId={selectId}
+          isPending={isPending}
+          setIsPending={setIsPending}
+          handleHoverId={handleHoverId}
+          handleSelectId={handleSelectId}
+          winRateAnimeEnd={winRateAnimeEnd}
+          brightness={hoverId===null? 1 : hoverId===chmp.id? 1.1 : 0.75}
+        />
+      ))}
+    </>
+  );
+}
+
+export default Selector;
