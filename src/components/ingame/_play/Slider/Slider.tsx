@@ -27,6 +27,7 @@ const sliderCSS = `
 const Slider = ({isPending, setIsPending, isSliding, currentMatch, nextMatch, isCorrectChampion, switchCurrentAndNextMatch }: SliderProps) => {
 
   // 중복 없는 유니크 값 만들어서 selector 리렌더링 시키기
+  // String(currentMatch) 하면 [object object] 이렇게 떠서 안돼.
   const keyValue =[currentMatch.chmpA.id, currentMatch.chmpA.winRate, currentMatch.chmpB.id, currentMatch.chmpB.winRate, currentMatch.count, currentMatch.winner].join();
 
   return (
