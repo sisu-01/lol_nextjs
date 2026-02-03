@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Sans_KR, East_Sea_Dokdo } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/layout/Header/Header";
 
 // Noto Sans KR 설정 (기본 폰트)
 const notoFont = Noto_Sans_KR({
@@ -53,6 +54,7 @@ export default function RootLayout({
       <meta name='viewport' content='width=device-width, intial-scale=1.0' />
       <body className={`${notoFont.variable} ${dokdoFont.variable} antialiased`}>
         <div className="flex flex-col h-dvh">
+          <Header />
           <main className="absolute top-[45px] sm:top-[95px] bottom-[45px] sm:bottom-[95px] overflow-hidden flex-1 w-full">
             {children}
           </main>
