@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Noto_Sans_KR, East_Sea_Dokdo } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header/Header";
+import Footer from "@/components/layout/Footer/Footer";
 
 // Noto Sans KR 설정 (기본 폰트)
 const notoFont = Noto_Sans_KR({
@@ -58,6 +59,7 @@ export default function RootLayout({
           <main className="absolute top-[45px] sm:top-[95px] bottom-[45px] sm:bottom-[95px] overflow-hidden flex-1 w-full">
             {children}
           </main>
+          <Footer />
         </div>
       </body>
     </html>
