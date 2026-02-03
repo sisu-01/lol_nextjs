@@ -1,6 +1,6 @@
 import type { fetchedMatchupsType } from "../types/game";
 
-const API_URL = process.env.NEXT_API_URL;
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export const fetchMatchups = async (): Promise<fetchedMatchupsType | null> => {
   try {
