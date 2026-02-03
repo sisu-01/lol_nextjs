@@ -9,15 +9,13 @@ const Header = () => {
         <span className="text-xl sm:text-2xl drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] group-hover:scale-110 transition-transform">🏠</span>
         <span className="hidden sm:inline border-b-2 border-transparent group-hover:border-yellow-400">Main</span>
       </Link>
-      
-      <Link href={'/news'} className="group flex items-center gap-2 transition-all duration-300 hover:text-blue-400">
-        <span className="text-xl sm:text-2xl drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] group-hover:scale-110 transition-transform">🗞️</span>
-        <span className="hidden sm:inline border-b-2 border-transparent group-hover:border-blue-400">News</span>
-      </Link>
-      
       <Link href={'/guide'} className="group flex items-center gap-2 transition-all duration-300 hover:text-green-400">
         <span className="text-xl sm:text-2xl drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] group-hover:scale-110 transition-transform">🤔</span>
         <span className="hidden sm:inline border-b-2 border-transparent group-hover:border-green-400">Guide</span>
+      </Link>
+      <Link href={'/news'} className="group flex items-center gap-2 transition-all duration-300 hover:text-blue-400">
+        <span className="text-xl sm:text-2xl drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] group-hover:scale-110 transition-transform">🗞️</span>
+        <span className="hidden sm:inline border-b-2 border-transparent group-hover:border-blue-400">News</span>
       </Link>
     </div>
   );
