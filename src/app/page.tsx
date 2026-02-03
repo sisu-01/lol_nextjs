@@ -28,7 +28,7 @@ export default function Home() {
   
   const handleGameStart = () => {
     if (!role) {alert('라인을 선택해주세요.');return;}
-    router.push(`/game?role=${role}`);
+    router.push(`/game/${role}`);
   }
 
   return (
