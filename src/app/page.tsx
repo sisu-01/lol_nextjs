@@ -2,8 +2,21 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+import { useRouter } from 'next/navigation';
+import { RoleType } from "@/types/game";
+import GameSet from "@/components/GameSet/GameSet";
+import { rolesData } from "@/data/data";
 
 export default function Home() {
+  const [role, setRole] = useState<RoleType| ''>('');
+  const router = useRouter();
+  // sessionStorage.setItem('refresh', 'false');
+
+  const handleGameStart = () => {
+    if (!role) {alert('라인을 선택해주세요.');return;}
+    router.push(`/game?role=${role}`);
+  }
 
   const bgUrls = [
     // "https://media.giphy.com/media/3etP8HqLPVixUc9Y3s/giphy.gif",
@@ -54,10 +67,10 @@ export default function Home() {
         {/* 역할 선택 카드 */}
         <div className="flex flex-col justify-center gap-6 bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-2xl max-w-md w-full">
           <div className="p-4 backdrop-blur rounded-xl shadow-inner">
-            {/* <GameSet items={rolesData} setItem={setRole} selected={role} /> */}
+            <GameSet items={rolesData} setItem={setRole} selected={role} />
           </div>
           <button
-            // onClick={handleGameStart}
+            onClick={handleGameStart}
             className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-xl shadow-lg transition-all active:scale-95"
           >
             게임 시작
