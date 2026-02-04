@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Noto_Sans_KR, East_Sea_Dokdo } from "next/font/google";
+import { Noto_Sans_KR, Yeon_Sung } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header/Header";
 import Footer from "@/components/layout/Footer/Footer";
@@ -12,8 +12,8 @@ const notoFont = Noto_Sans_KR({
 });
 
 // East Sea Dokdo 설정 (특정 클래스용)
-const dokdoFont = East_Sea_Dokdo({
-  variable: "--font-dokdo",
+const subFont = Yeon_Sung({
+  variable: "--font-sub",
   weight: "400",
   subsets: ["latin"],
 });
@@ -53,7 +53,7 @@ export default function RootLayout({
     <html lang="ko">
       <meta charSet="utf-8" />
       <meta name='viewport' content='width=device-width, intial-scale=1.0' />
-      <body className={`${notoFont.variable} ${dokdoFont.variable} antialiased`}>
+      <body className={`${notoFont.variable} ${subFont.variable} antialiased`}>
         <div className="flex flex-col h-dvh">
           <Header />
           <main className="absolute top-11.25 sm:top-23.75 bottom-11.25 sm:bottom-23.75 overflow-hidden flex-1 w-full">

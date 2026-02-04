@@ -34,11 +34,11 @@ export default function Home() {
 
       <div className="w-full flex flex-col justify-center items-center gap-5 text-center px-4">
         <div>
-          <Image src="/logo.svg" width={100} height={100} className="h-50" alt="도전! 롤든벨" />
+          <Image src="/logo.svg" width={700} height={100} className="h-50" alt="도전! 롤든벨" />
         </div>
         <div>
           <h1>
-            <span className="desc text-5xl sm:text-6xl text-gray-200 drop-shadow-md animate-fadeIn">
+            <span className="desc text-5xl sm:text-6xl text-gray-200 drop-shadow-md animate-fadeIn font-sub">
               둘이 싸우면&nbsp;<span className="text-yellow-200">누가</span>&nbsp;이길까?
             </span>
           </h1>

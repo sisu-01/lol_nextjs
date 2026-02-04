@@ -9,7 +9,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-noto);
-  --font-dokdo: var(--font-dokdo);
+  --font-sub: var(--font-sub);
 }
 
 @media (prefers-color-scheme: dark) {
