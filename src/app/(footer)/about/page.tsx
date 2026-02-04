@@ -14,7 +14,7 @@ const AboutPage = () => {
           <span className="inline-block px-4 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-bold mb-4">
             Master the Summoner&apos;s Rift
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 mb-4">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-indigo-600 mb-4">
             도전! 롤든벨
           </h2>
           <p className="text-lg text-gray-500 italic">
