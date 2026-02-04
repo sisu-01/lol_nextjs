@@ -3,7 +3,7 @@ import Link from "next/link";
 const NewsPage = () => {
   return (
     <div className="p-8 max-w-4xl mx-auto text-gray-800 leading-relaxed overflow-y-auto h-full">
-      <h1 className="text-2xl font-bold mb-6 text-white">News 새 소식 2026.01.20</h1>
+      <h1 className="text-2xl font-bold mb-6 text-white">News 새 소식 2026.02.04</h1>
       <section className="bg-white p-6 rounded-lg shadow-md mb-6">
         <h2 className="text-xl font-semibold mb-4">1. 패치 일정</h2>
         <p>
