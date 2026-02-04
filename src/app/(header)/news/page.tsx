@@ -1,9 +1,11 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const NewsPage = () => {
   return (
     <div className="p-8 max-w-4xl mx-auto text-gray-800 leading-relaxed overflow-y-auto h-full">
       <h1 className="text-2xl font-bold mb-6 text-white">News 새 소식 2026.02.04</h1>
+      <Image src="/logo.svg" width={700} height={100} className="h-50 m-auto pb-5" alt="도전! 롤든벨" />
       <section className="bg-white p-6 rounded-lg shadow-md mb-6">
         <h2 className="text-xl font-semibold mb-4">1. 패치 일정</h2>
         <p>
@@ -127,6 +129,22 @@ const NewsPage = () => {
           </tbody>
         </table>
       </section>
+
+      <section className="my-10 p-6 bg-blue-50 rounded-xl border border-blue-100 text-gray-700">
+        <h2 className="text-xl font-bold mb-4 text-blue-800">🧐 도전! 롤든벨 제작팀의 26.03 패치 분석</h2>
+        <div className="space-y-4">
+          <p>
+            이번 <strong>26.03 패치</strong>의 핵심은 단연 '치명타 피해량 200% 복구'입니다. 이는 지난 시즌 마법사 아이템의 강세로 위축되었던 원거리 딜러들에게 다시금 캐리력을 부여하려는 라이엇의 의도가 엿보입니다. 
+          </p>
+          <p>
+            <strong>[승률 예측 팁]:</strong> 이번 패치로 인해 퀴즈에서 <strong>아펠리오스</strong>나 <strong>사미라</strong> 같은 치명타 기반 원딜이 등장한다면, 이전 버전보다 승률 가중치를 높게 두는 것이 정답 확률을 높이는 비결입니다. 특히 '무한의 대검'의 AD 상향은 게임 중반 이후 원딜들의 폭발력을 결정짓는 변수가 될 것입니다.
+          </p>
+          <p>
+            반면, <strong>군단의 방패 삭제</strong>와 <strong>탱커용 신규 아이템 '원형질 안전벨트'</strong>의 등장은 서포터와 탑 라인의 상성 구도를 크게 흔들 것으로 보입니다. 이제 단순 방어력보다는 체력 회복과 강인함을 기반으로 한 버티기 싸움이 주를 이룰 것이며, 이는 '도전! 롤든벨' 통계 데이터에도 즉각 반영될 예정입니다.
+          </p>
+        </div>
+      </section>
+
       <section className="bg-white p-6 rounded-lg shadow-md mb-6 text-gray-800">
         <h2 className="text-2xl font-bold mb-6 border-b-4 border-blue-500 pb-2">2. 최신 패치 상세 내역 26.03</h2>
         <div className="mb-10 bg-blue-50 p-5 rounded-xl border border-blue-100">
