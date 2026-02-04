@@ -14,16 +14,20 @@ import PositionBoard from "@/components/ingame/PositionBoard/PositionBoard";
 import Versus from "@/components/ingame/Versus/Versus";
 import Slider from "@/components/ingame/_play/Slider/Slider";
 
-const POSITIONS_LABEL = {
-  'all': '전 라인',
-  'top': '탑',
-  'jungle': '정글',
-  'mid': '미드',
-  'adc': '원딜',
-  'support': '서포터'
+// const POSITIONS_LABEL = {
+//   'all': '전 라인',
+//   'top': '탑',
+//   'jungle': '정글',
+//   'mid': '미드',
+//   'adc': '원딜',
+//   'support': '서포터'
+// }
+
+interface PageProps {
+  params: Promise<{ role: string }>;
 }
 
-const GamePage = ({ params }) => {
+const GamePage = ({ params }: PageProps) => {
   const { role } = use(params);
   // const role: RoleType = (roleParam as RoleType);
   const {
