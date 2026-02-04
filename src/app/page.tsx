@@ -43,29 +43,6 @@ export default function Home() {
             </span>
           </h1>
         </div>
-        {/* 설명 문구 */}
-        <p className="text-base sm:text-base text-gray-200 leading-relaxed max-w-xl drop-shadow mt-3">
-          ** 라인전 승패 말고 게임 최종 승자를 맞춰주세요!😋**
-        </p>
-
-        <GameSet />
-
-        {/* <div className="text-gray-300 text-sm sm:text-base leading-4 mt-4">
-          승률 데이터는&nbsp;<span className="font-bold">실시간 OP.GG 에메랄드 티어 이상</span>&nbsp;기준입니다.
-        </div> */}
-        <div className="text-gray-300 text-sm sm:text-base leading-4 mt-4">
-          승률 데이터는 &apos;도전! 롤든벨&apos;만의 방식으로 수집하여 매우 신뢰도가 높은&nbsp;<span className="font-bold">실시간 에메랄드 티어 이상</span>&nbsp;통계를 기준으로 합니다.
-        </div>
-
-        <div className="flex flex-col gap-5 my-5">
-          <Link href={'/news'} className="bg-blue-500 text-white font-semibold p-3 rounded-xl shadow-lg" >
-            🗞️ 최신 리그 오브 레전드 소식 확인하기
-          </Link>
-          <Link href={'/guide'} className="bg-blue-500 text-white font-semibold p-3 rounded-xl shadow-lg" >
-            🤔 도전! 롤든벨 플레이 방법 알아보기
-          </Link>
-        </div>
-
         <div className="mt-12 p-6 bg-gray-900 text-gray-300 rounded-lg border border-gray-700 leading-relaxed text-sm md:text-base">
           <section className="mb-6">
             <h2 className="text-xl font-bold text-yellow-400 mb-3">도전! 롤든벨: 리그 오브 레전드 상성 퀴즈 가이드</h2>
@@ -90,6 +67,29 @@ export default function Home() {
             </p>
           </section>
         </div>
+        {/* 설명 문구 */}
+        <p className="text-base sm:text-base text-gray-200 leading-relaxed max-w-xl drop-shadow mt-3">
+          ** 라인전 승패 말고 게임 최종 승자를 맞춰주세요!😋**
+        </p>
+
+        <GameSet />
+
+        {/* <div className="text-gray-300 text-sm sm:text-base leading-4 mt-4">
+          승률 데이터는&nbsp;<span className="font-bold">실시간 OP.GG 에메랄드 티어 이상</span>&nbsp;기준입니다.
+        </div> */}
+        <div className="text-gray-300 text-sm sm:text-base leading-4 mt-4">
+          승률 데이터는 &apos;도전! 롤든벨&apos;만의 방식으로 수집하여 매우 신뢰도가 높은&nbsp;<span className="font-bold">실시간 에메랄드 티어 이상</span>&nbsp;통계를 기준으로 합니다.
+        </div>
+
+        <div className="flex flex-col gap-5 my-5">
+          <Link href={'/news'} className="bg-blue-500 text-white font-semibold p-3 rounded-xl shadow-lg" >
+            🗞️ 최신 리그 오브 레전드 소식 확인하기
+          </Link>
+          <Link href={'/guide'} className="bg-blue-500 text-white font-semibold p-3 rounded-xl shadow-lg" >
+            🤔 도전! 롤든벨 플레이 방법 알아보기
+          </Link>
+        </div>
+
       </div>
       <div className="hidden md:block p-4">
         {/* <GoogldAds /> */}
