@@ -15,14 +15,15 @@ const BG_URLS = [
 ];
 
 export default function Home() {
-  const randomIndex = Math.floor(Math.random() * BG_URLS.length);
+  // const randomIndex = Math.floor(Math.random() * BG_URLS.length);
   // sessionStorage.setItem('refresh', 'false');
 
   return (
     // <div className="w-full h-full flex flex-row justify-between items-center"
     <div className="w-full h-full justify-between items-center overflow-auto"
       style={{
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(${BG_URLS[randomIndex]})`,
+        // backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(${BG_URLS[randomIndex]})`,
+        backgroundColor: "#3f3f3f",
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat"
