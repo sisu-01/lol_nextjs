@@ -13,6 +13,8 @@ import Animation from "@/components/ingame/Animation/Animation";
 import PositionBoard from "@/components/ingame/PositionBoard/PositionBoard";
 import Versus from "@/components/ingame/Versus/Versus";
 import Slider from "@/components/ingame/_play/Slider/Slider";
+import { rolesArray } from "@/data/data";
+import { notFound } from "next/navigation";
 
 // const POSITIONS_LABEL = {
 //   'all': '전 라인',
@@ -27,9 +29,16 @@ interface PageProps {
   params: Promise<{ role: string }>;
 }
 
+const isValidRole = (role: string) => {
+  return (rolesArray as readonly string[]).includes(role);
+}
+
 const GamePage = ({ params }: PageProps) => {
   const { role } = use(params);
-  const roleParam: RoleType = (role as RoleType);
+  // ✨ 함수만 통과하면 자동으로 role은 RoleType으로 인식됨
+  if (!isValidRole(role)) {
+    notFound();
+  }
   const {
     chmpDataJson,
     isLoading,
@@ -48,7 +57,7 @@ const GamePage = ({ params }: PageProps) => {
     // setModalHide,
     isCorrectChampion,
     switchCurrentAndNextMatch,
-  } = useGame(roleParam);
+  } = useGame(role);
   
   if (error) return <Error />;
   if (gameover) return <GameOver score={score} gameStart={gameStart} />;
