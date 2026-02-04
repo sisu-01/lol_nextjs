@@ -29,7 +29,7 @@ interface PageProps {
 
 const GamePage = ({ params }: PageProps) => {
   const { role } = use(params);
-  // const role: RoleType = (roleParam as RoleType);
+  const roleParam: RoleType = (role as RoleType);
   const {
     chmpDataJson,
     isLoading,
@@ -48,7 +48,7 @@ const GamePage = ({ params }: PageProps) => {
     // setModalHide,
     isCorrectChampion,
     switchCurrentAndNextMatch,
-  } = useGame(role);
+  } = useGame(roleParam);
   
   if (error) return <Error />;
   if (gameover) return <GameOver score={score} gameStart={gameStart} />;
