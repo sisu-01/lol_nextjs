@@ -50,8 +50,11 @@ export default function Home() {
 
         <GameSet />
 
-        <div className="text-gray-300 text-sm sm:text-base leading-4 mt-4">
+        {/* <div className="text-gray-300 text-sm sm:text-base leading-4 mt-4">
           승률 데이터는&nbsp;<span className="font-bold">실시간 OP.GG 에메랄드 티어 이상</span>&nbsp;기준입니다.
+        </div> */}
+        <div className="text-gray-300 text-sm sm:text-base leading-4 mt-4">
+          승률 데이터는&nbsp;<span className="font-bold">실시간 에메랄드 티어 이상</span>&nbsp;통계를 기준으로 합니다.
         </div>
 
         <div className="flex flex-col gap-5 my-5">
@@ -67,7 +70,7 @@ export default function Home() {
           <section className="mb-6">
             <h2 className="text-xl font-bold text-yellow-400 mb-3">도전! 롤든벨: 리그 오브 레전드 상성 퀴즈 가이드</h2>
             <p>
-              리그 오브 레전드(LoL)는 160여 명이 넘는 챔피언들이 존재하며, 각 챔피언 간의 &apos;상성&apos;은 승패를 결정짓는 핵심 요소입니다. <strong>도전! 롤든벨</strong>은 이러한 복잡한 챔피언 메커니즘을 퀴즈 형식으로 풀어내어, 초보자(뉴비)들이 소환사의 협곡에 더 쉽게 적응할 수 있도록 돕는 학습형 웹 게임입니다. 
+              리그 오브 레전드(LoL)는 170여 명이 넘는 챔피언들이 존재하며, 각 챔피언 간의 &apos;상성&apos;은 승패를 결정짓는 핵심 요소입니다. <strong>도전! 롤든벨</strong>은 이러한 복잡한 챔피언 메커니즘을 퀴즈 형식으로 풀어내어, 초보자(뉴비)들이 소환사의 협곡에 더 쉽게 적응할 수 있도록 돕는 학습형 웹 게임입니다. 
             </p>
           </section>
           <section className="mb-6">
@@ -76,7 +79,7 @@ export default function Home() {
               본 게임은 무작위로 매칭되는 두 챔피언의 라인전 혹은 한타 기여도를 기반으로 문제를 출제합니다. 사용자는 제시된 상황에서 어떤 챔피언이 더 우위에 있는지 판단해야 합니다.
             </p>
             <ul className="list-disc ml-5 space-y-1 text-gray-400">
-              <li><strong>데이터 집계:</strong> 퀴즈의 정답 기준은 글로벌 플래티넘 티어 이상의 랭크 게임 승률, 라인전 킬 확률, 그리고 Riot API를 통한 실제 매치업 통계를 바탕으로 구성되었습니다.</li>
+              <li><strong>데이터 집계:</strong> 퀴즈의 정답 기준은 글로벌 에메랄드 티어 이상의 랭크 게임 승률, 라인전 킬 확률, 그리고 Riot API를 통해 &apos;도전! 롤든벨&apos;만의 가장 정확한 통계 수집을 통해 실제 매치업 통계를 바탕으로 구성되었습니다.</li>
               <li><strong>실시간 메타 반영:</strong> 최신 패치 노트와 아이템 변경 사항을 고려하여 주기적으로 퀴즈 데이터셋을 업데이트합니다.</li>
             </ul>
           </section>

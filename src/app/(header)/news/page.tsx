@@ -128,7 +128,7 @@ const NewsPage = () => {
         </table>
       </section>
       <section className="bg-white p-6 rounded-lg shadow-md mb-6 text-gray-800">
-        <h2 className="text-2xl font-bold mb-6 border-b-4 border-blue-500 pb-2">2. 최신 패치 상세 내역 26.02</h2>
+        <h2 className="text-2xl font-bold mb-6 border-b-4 border-blue-500 pb-2">2. 최신 패치 상세 내역 26.03</h2>
         <div className="mb-10 bg-blue-50 p-5 rounded-xl border border-blue-100">
           <h3 className="text-xl font-bold mb-4 text-blue-800">▣ 챔피언 공통 개편: 치명타 시스템</h3>
           <p className="leading-relaxed mb-4">
