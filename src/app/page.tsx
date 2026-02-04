@@ -29,48 +29,64 @@ export default function Home() {
         backgroundRepeat: "no-repeat"
       }}
     >
-      <div className="hidden md:block p-4">
-        {/* <GoogldAds /> */}
-      </div>
+      <div className="w-full flex flex-col justify-center items-center gap-5 text-center px-4 py-10">
+        <header>
+          {/* SEO를 위한 H1 및 로고 최적화 */}
+          <h1 className="sr-only">도전! 롤든벨 - 리그 오브 레전드 상성 퀴즈</h1>
+          <Image 
+            src="/logo.svg" 
+            width={700} 
+            height={200} 
+            className="h-auto w-full max-w-125 md:max-w-175" 
+            alt="도전! 롤든벨 로고" 
+            priority // 메인 로고이므로 우선 순위 로드
+          />
+        </header>
 
-      <div className="w-full flex flex-col justify-center items-center gap-5 text-center px-4">
         <div>
-          <Image src="/logo.svg" width={700} height={100} className="h-50" alt="도전! 롤든벨" />
-        </div>
-        <div>
-          <h1>
-            <span className="desc text-5xl sm:text-6xl text-gray-200 drop-shadow-md animate-fadeIn font-sub">
-              둘이 싸우면&nbsp;<span className="text-yellow-200">누가</span>&nbsp;이길까?
+          <h2 className="mt-4">
+            <span className="desc text-4xl sm:text-6xl text-gray-200 drop-shadow-md animate-fadeIn font-sub leading-tight">
+              둘이 싸우면&nbsp;<span className="text-yellow-400 font-bold">누가</span>&nbsp;이길까?
             </span>
-          </h1>
+          </h2>
         </div>
-        <div className="mt-12 p-6 bg-gray-900 text-gray-300 rounded-lg border border-gray-700 leading-relaxed text-sm md:text-base">
+
+        {/* 안내 섹션: AdSense 봇이 좋아하는 고퀄리티 텍스트 영역 */}
+        <article className="mt-12 p-6 bg-gray-900/80 backdrop-blur-sm text-gray-300 rounded-2xl border border-gray-700 leading-relaxed text-sm md:text-base max-w-3xl shadow-2xl">
           <section className="mb-6">
-            <h2 className="text-xl font-bold text-yellow-400 mb-3">도전! 롤든벨: 리그 오브 레전드 상성 퀴즈 가이드</h2>
-            <p>
-              리그 오브 레전드(LoL)는 170여 명이 넘는 챔피언들이 존재하며, 각 챔피언 간의 &apos;상성&apos;은 승패를 결정짓는 핵심 요소입니다. <strong>도전! 롤든벨</strong>은 이러한 복잡한 챔피언 메커니즘을 퀴즈 형식으로 풀어내어, 초보자(뉴비)들이 소환사의 협곡에 더 쉽게 적응할 수 있도록 돕는 학습형 웹 게임입니다. 
+            <h2 className="text-xl font-bold text-yellow-400 mb-3 flex items-center justify-center">
+              <span className="mr-2">🏆</span> 도전! 롤든벨: LoL 상성 퀴즈 가이드
+            </h2>
+            <p className="text-gray-300">
+              리그 오브 레전드(LoL)의 170여 명의 챔피언 간 <strong>&apos;상성&apos;</strong>은 승패의 핵심입니다. 
+              본 서비스는 복잡한 메커니즘을 퀴즈로 풀어내어, 입문자들이 협곡에 더 쉽게 적응하도록 돕는 <strong>교육용 웹 게임</strong>입니다.
             </p>
           </section>
-          <section className="mb-6">
-            <h3 className="text-lg font-semibold text-white mb-2 underline underline-offset-4 decoration-yellow-500">게임 방법 및 데이터 기준</h3>
-            <p className="mb-2">
-              본 게임은 무작위로 매칭되는 두 챔피언의 라인전 혹은 한타 기여도를 기반으로 문제를 출제합니다. 사용자는 제시된 상황에서 어떤 챔피언이 더 우위에 있는지 판단해야 합니다.
-            </p>
-            <ul className="list-disc ml-5 space-y-1 text-gray-400">
-              <li><strong>데이터 집계:</strong> 퀴즈의 정답 기준은 글로벌 에메랄드 티어 이상의 랭크 게임 승률, 라인전 킬 확률, 그리고 Riot API를 통해 &apos;도전! 롤든벨&apos;만의 가장 정확한 통계 수집을 통해 실제 매치업 통계를 바탕으로 구성되었습니다.</li>
-              <li><strong>실시간 메타 반영:</strong> 최신 패치 노트와 아이템 변경 사항을 고려하여 주기적으로 퀴즈 데이터셋을 업데이트합니다.</li>
-            </ul>
+
+          <section className="mb-6 grid md:grid-cols-2 gap-6 text-left">
+            <div className="p-4 bg-gray-800 rounded-lg">
+              <h3 className="font-semibold text-white mb-2 border-b border-yellow-600 pb-1 inline-block">데이터 기준</h3>
+              <p className="text-xs text-gray-400">
+                글로벌 에메랄드 티어 이상의 랭크 승률과 Riot API 통계를 바탕으로 정답을 산출하여 높은 신뢰도를 보장합니다.
+              </p>
+            </div>
+            <div className="p-4 bg-gray-800 rounded-lg">
+              <h3 className="font-semibold text-white mb-2 border-b border-yellow-600 pb-1 inline-block">실시간 메타</h3>
+              <p className="text-xs text-gray-400">
+                최신 패치 노트와 아이템 변경 사항을 주기적으로 반영하여 현재 메타에 가장 적합한 퀴즈를 제공합니다.
+              </p>
+            </div>
           </section>
-          <section className="mb-6">
-            <h3 className="text-lg font-semibold text-white mb-2">뉴비 플레이 팁: 상성을 알아야 하는 이유</h3>
-            <p>
-              단순히 컨트롤 실력(피지컬)만으로는 한계가 있습니다. 상대 챔피언의 스킬 쿨타임과 상성을 이해하면, 불리한 라인전에서도 &apos;사리는 플레이&apos;를 통해 성장을 도모할 수 있습니다. <strong>도전! 롤든벨</strong>을 통해 반복적으로 상성을 학습하면 인게임 밴픽 단계에서부터 전략적인 우위를 점할 수 있으며, 이는 곧 승률 상승과 티어 점수 향상으로 이어집니다.
+
+          <section>
+            <p className="text-sm bg-blue-900/30 p-3 rounded-lg border border-blue-800/50">
+              <strong>💡 플레이 팁:</strong> 단순히 피지컬뿐만 아니라 상성을 이해하면 밴픽 단계부터 전략적 우위를 점할 수 있습니다. 반복 학습을 통해 승률을 높여보세요!
             </p>
           </section>
-        </div>
-        {/* 설명 문구 */}
-        <p className="text-base sm:text-base text-gray-200 leading-relaxed max-w-xl drop-shadow mt-3">
-          ** 라인전 승패 말고 게임 최종 승자를 맞춰주세요!😋**
+        </article>
+
+        <p className="text-lg text-yellow-200 font-medium mt-6 animate-bounce">
+          👇 라인전 승패 말고 &apos;최종 승자&apos;를 맞춰보세요! 😋
         </p>
 
         <GameSet />
@@ -78,18 +94,18 @@ export default function Home() {
         {/* <div className="text-gray-300 text-sm sm:text-base leading-4 mt-4">
           승률 데이터는&nbsp;<span className="font-bold">실시간 OP.GG 에메랄드 티어 이상</span>&nbsp;기준입니다.
         </div> */}
-        <div className="text-gray-300 text-sm sm:text-base leading-4 mt-4">
-          승률 데이터는 &apos;도전! 롤든벨&apos;만의 방식으로 수집하여 매우 신뢰도가 높은&nbsp;<span className="font-bold">실시간 에메랄드 티어 이상</span>&nbsp;통계를 기준으로 합니다.
+        <div className="text-gray-400 text-xs sm:text-sm mt-4 italic">
+          * 승률 데이터는 &apos;도전! 롤든벨&apos;만의 방식으로 수집하여 매우 신뢰도가 높은&nbsp;<span className="font-bold">실시간 에메랄드 티어 이상</span>&nbsp;통계를 기준으로 합니다.
         </div>
 
-        <div className="flex flex-col gap-5 my-5">
-          <Link href={'/news'} className="bg-blue-500 text-white font-semibold p-3 rounded-xl shadow-lg" >
-            🗞️ 최신 리그 오브 레전드 소식 확인하기
+        <nav className="flex flex-col sm:flex-row gap-4 my-10">
+          <Link href={'/news'} className="bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition-all transform hover:-translate-y-1" >
+            🗞️ 최신 롤 소식
           </Link>
-          <Link href={'/guide'} className="bg-blue-500 text-white font-semibold p-3 rounded-xl shadow-lg" >
-            🤔 도전! 롤든벨 플레이 방법 알아보기
+          <Link href={'/guide'} className="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition-all transform hover:-translate-y-1" >
+            🤔 이용 가이드
           </Link>
-        </div>
+        </nav>
 
       </div>
       <div className="hidden md:block p-4">
