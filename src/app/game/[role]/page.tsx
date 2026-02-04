@@ -29,7 +29,7 @@ interface PageProps {
   params: Promise<{ role: string }>;
 }
 
-const isValidRole = (role: string) => {
+const isValidRole = (role: string): role is RoleType => {
   return (rolesArray as readonly string[]).includes(role);
 }
 
