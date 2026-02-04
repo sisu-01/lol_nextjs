@@ -54,7 +54,7 @@ export default function Home() {
           승률 데이터는&nbsp;<span className="font-bold">실시간 OP.GG 에메랄드 티어 이상</span>&nbsp;기준입니다.
         </div> */}
         <div className="text-gray-300 text-sm sm:text-base leading-4 mt-4">
-          승률 데이터는&nbsp;<span className="font-bold">실시간 에메랄드 티어 이상</span>&nbsp;통계를 기준으로 합니다.
+          승률 데이터는 &apos;도전! 롤든벨&apos;만의 방식으로 수집하여 매우 신뢰도가 높은&nbsp;<span className="font-bold">실시간 에메랄드 티어 이상</span>&nbsp;통계를 기준으로 합니다.
         </div>
 
         <div className="flex flex-col gap-5 my-5">
