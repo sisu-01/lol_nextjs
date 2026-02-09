@@ -42,7 +42,7 @@ const PostsPage = () => {
                   </h2>
                   
                   {/* 미리보기 내용 */}
-                  <p className="text-gray-600 mb-6 text-sm leading-relaxed flex-grow">
+                  <p className="text-gray-600 mb-6 text-sm leading-relaxed grow">
                     {getPreview(post.content)}
                   </p>
                   
