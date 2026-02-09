@@ -46,3 +46,9 @@ export type GameActionType =
   | { type: "LIFE_UP"; }
   | { type: "GAME_OVER"; }
   | { type: "GAME_ERROR"; }
+export type PostType = {
+  id: number;
+  title: string;
+  date: Date;
+  content: string;
+}

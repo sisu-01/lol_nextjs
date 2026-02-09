@@ -1,4 +1,5 @@
 import { rolesData } from '@/data/data'
+import { postsData } from '@/data/posts';
 import type { MetadataRoute } from 'next'
  
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -9,7 +10,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5
   }));
 
-  const routes = ['guide', 'news', 'privacy', 'terms', 'contact', 'about']
+  const postUrls: MetadataRoute.Sitemap = postsData.map(post => ({
+    url: `https://www.lol-updown.com/posts/${post.id}`,
+    lastModified: post.date,
+    changeFrequency: 'weekly',
+    priority: 0.7
+  }));
+
+  const routes = ['guide', 'news', 'posts', 'privacy', 'terms', 'contact', 'about']
   const urls: MetadataRoute.Sitemap = routes.map(route => ({
     url: `https://www.lol-updown.com/${route}`,
     lastModified: new Date(),
@@ -25,6 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     ...urls,
-    ...gameUrls
+    ...gameUrls,
+    ...postUrls
   ]
 }
