@@ -19,6 +19,7 @@ const subFont = Yeon_Sung({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.lol-updown.com'),
   title: {
     default: "도전! 롤든벨 - 실시간 롤 상성 트렌드 퀴즈",
     template: "%s | 도전! 롤든벨"
