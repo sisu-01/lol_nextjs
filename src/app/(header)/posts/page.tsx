@@ -29,7 +29,7 @@ const PostsPage = () => {
 
         {/* 포스트 그리드 */}
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {postsData.map((post) => (
+          {postsData.sort((a, b) => b.id - a.id).map((post) => (
             <article 
               key={post.id} 
               className="flex flex-col bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md hover:-translate-y-1 transition-all duration-300 cursor-pointer"
