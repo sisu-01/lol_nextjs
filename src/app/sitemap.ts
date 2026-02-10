@@ -13,7 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const postUrls: MetadataRoute.Sitemap = postsData.map(post => ({
     url: `https://www.lol-updown.com/posts/${post.id}`,
     lastModified: post.date,
-    changeFrequency: 'weekly',
+    changeFrequency: 'yearly',
     priority: 0.7
   }));
 
@@ -21,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const urls: MetadataRoute.Sitemap = routes.map(route => ({
     url: `https://www.lol-updown.com/${route}`,
     lastModified: new Date(),
-    changeFrequency: 'monthly',
+    changeFrequency: 'weekly',
     priority: 0.7
   }));
 
