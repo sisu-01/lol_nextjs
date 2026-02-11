@@ -1,4 +1,6 @@
 import { postsData } from "@/data/posts";
+import { getCustomMetadata } from "@/lib/metadata";
+import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { use } from "react";
@@ -11,6 +13,29 @@ export async function generateStaticParams() {
   return postsData.map((post) => ({
     id: post.id.toString(),
   }));
+}
+
+export async function generateMetadata({ params }: PostProps): Promise<Metadata> {
+  // Next.js 15부터 params는 Promise입니다.
+  const { id } = await params;
+  const post = postsData.find((p) => p.id === Number(id));
+
+  if (!post) {
+    return {}; // 포스트가 없으면 빈 메타데이터 반환 (페이지에서 404 처리됨)
+  }
+
+  // HTML 태그 제거 및 길이 제한 (Description용)
+  const plainText = post.content.replace(/<[^>]*>?/gm, '');
+  const description = plainText.length > 140 
+    ? plainText.substring(0, 140) + "..." 
+    : plainText;
+
+  // 헬퍼 함수를 사용해 메타데이터 생성
+  return getCustomMetadata({
+    title: post.title,
+    description: description,
+    path: `/posts/${id}`, // canonical 및 og:url에 사용될 경로
+  });
 }
 
 const PostPage = ({ params }: PostProps) => {
