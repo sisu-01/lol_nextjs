@@ -11,7 +11,7 @@ const Footer = () => {
       <span className="w-1px h-2 bg-gray-600"></span>
       <Link href={'/about'} className="hover:text-white hover:underline decoration-1 underline-offset-4 transition-colors">About Us</Link>
       <span className="w-1px h-2 bg-gray-600"></span>
-      © 2026 도전! 롤든벨. All rights reserved.
+      {/* © 2026 도전! 롤든벨. All rights reserved. */}
     </div>
   );
 }
