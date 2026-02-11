@@ -1,7 +1,10 @@
-export const metadata = {
-  title: 'Contact Us',
-  description: 'Please contact our team at any time for inquiries or assistance regarding our services.',
-}
+import { getCustomMetadata } from "@/lib/metadata";
+
+export const metadata = getCustomMetadata({
+  title: "문의하기",
+  description: "도전! 롤든벨 서비스 이용 중 궁금한 점이나 제휴 문의가 있으신가요? 언제든 편하게 의견을 남겨주세요. 사용자의 피드백을 소중히 생각합니다.",
+  path: "/contact",
+});
 
 const ContactPage = () => {
   const email = "tesv010615@gmail.com";

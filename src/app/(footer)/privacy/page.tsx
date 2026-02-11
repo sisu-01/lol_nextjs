@@ -1,7 +1,10 @@
-export const metadata = {
-  title: 'Privacy Policy',
-  description: 'We transparently guide you through our practices and your rights to protect your valuable personal information.',
-}
+import { getCustomMetadata } from "@/lib/metadata";
+
+export const metadata = getCustomMetadata({
+  title: "개인정보처리방침",
+  description: "도전! 롤든벨은 사용자의 개인정보를 소중하게 보호합니다. 수집하는 정보의 종류와 이용 목적, 보호 조치에 대한 상세 내용을 확인하실 수 있습니다.",
+  path: "/privacy",
+});
 
 const PrivacyPage = () => {
   return (

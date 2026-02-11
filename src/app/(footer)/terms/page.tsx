@@ -1,7 +1,10 @@
-export const metadata = {
-  title: 'Terms of Service',
-  description: 'These terms define the conditions of use and the rights and obligations between the site owner and our users.',
-}
+import { getCustomMetadata } from "@/lib/metadata";
+
+export const metadata = getCustomMetadata({
+  title: "이용약관",
+  description: "도전! 롤든벨 서비스 이용에 관한 권리와 의무, 책임 사항 등 기본적인 규칙을 안내해 드립니다.",
+  path: "/terms",
+});
 
 const TermsPage = () => {
   return (

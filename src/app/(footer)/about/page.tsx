@@ -1,7 +1,10 @@
-export const metadata = {
-  title: 'About Us | 도전! 롤든벨',
-  description: 'Learn League of Legends matchups and game knowledge through fun quizzes. Join the Challenger path with LoLDenBell!',
-}
+import { getCustomMetadata } from "@/lib/metadata";
+
+export const metadata = getCustomMetadata({
+  title: "서비스 소개",
+  description: "도전! 롤든벨은 170여 명의 챔피언 데이터를 기반으로 한 실시간 롤 상성 퀴즈 서비스입니다. 게임 실력을 높이고 트렌드를 읽는 가장 즐거운 방법을 확인해보세요.",
+  path: "/about",
+});
 
 const AboutPage = () => {
   return (

@@ -1,5 +1,12 @@
+import { getCustomMetadata } from "@/lib/metadata";
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata = getCustomMetadata({
+  title: "플레이 가이드",
+  description: "챔피언 상성을 맞추는 게임 도전! 롤든벨의 플레이 방법과 고득점을 위한 팁을 확인해보세요.",
+  path: "/guide",
+});
 
 const GuidePage = () => {
   return (
@@ -39,7 +46,7 @@ const GuidePage = () => {
         <h2 className="text-2xl font-semibold mb-4 border-b pb-2 text-indigo-600">🔍 티어별 승률 데이터의 차이와 해석</h2>
         <div className="space-y-4 text-gray-700">
           <p>
-            <strong>도전! 롤든벨</strong>이 분석의 기준을 <strong>'에메랄드 티어 이상'</strong>으로 고집하는 데에는 통계학적인 이유가 있습니다. 리그 오브 레전드(LoL)는 숙련도에 따라 챔피언의 성능이 완전히 다르게 발현되기 때문입니다.
+            <strong>도전! 롤든벨</strong>이 분석의 기준을 <strong>&apos;에메랄드 티어 이상&apos;</strong>으로 고집하는 데에는 통계학적인 이유가 있습니다. 리그 오브 레전드(LoL)는 숙련도에 따라 챔피언의 성능이 완전히 다르게 발현되기 때문입니다.
           </p>
           <div className="grid md:grid-cols-3 gap-4 mt-4">
             <div className="p-4 bg-blue-50 rounded-lg">
@@ -52,7 +59,7 @@ const GuidePage = () => {
             </div>
             <div className="p-4 bg-purple-50 rounded-lg">
               <h3 className="font-bold mb-2 text-purple-900">지표의 일관성 확보</h3>
-              <p className="text-sm">상위 티어 데이터는 라이엇 게임즈의 <strong>패치 노트 변화</strong>에 가장 기민하게 반응합니다. 저희는 이 데이터를 실시간으로 추적하여 유행을 넘어선 '실제 성능' 수치를 퀴즈의 정답으로 제공합니다.</p>
+              <p className="text-sm">상위 티어 데이터는 라이엇 게임즈의 <strong>패치 노트 변화</strong>에 가장 기민하게 반응합니다. 저희는 이 데이터를 실시간으로 추적하여 유행을 넘어선 &apos;실제 성능&apos; 수치를 퀴즈의 정답으로 제공합니다.</p>
             </div>
           </div>
         </div>
@@ -93,7 +100,7 @@ const GuidePage = () => {
         <div className="space-y-6">
           <div>
             <h3 className="font-bold text-lg mb-2">1. 전사(Bruiser) vs 탱커(Tank)</h3>
-            <p className="text-gray-700">전통적으로 전사 클래스는 지속 교전 능력이 뛰어나 탱커를 압도하는 경향이 있습니다. 하지만 탱커가 '가시 갑옷'이나 '태양불꽃 방패' 등 핵심 방어 아이템을 갖춘 시점부터는 승률 그래프가 역전되기도 합니다. 퀴즈에서 이 둘이 붙는다면, 현재 메타에서 '몰락한 왕의 검' 같은 안티 탱커 아이템의 효율을 고려해 보세요.</p>
+            <p className="text-gray-700">전통적으로 전사 클래스는 지속 교전 능력이 뛰어나 탱커를 압도하는 경향이 있습니다. 하지만 탱커가 &apos;가시 갑옷&apos;이나 &apos;태양불꽃 방패&apos; 등 핵심 방어 아이템을 갖춘 시점부터는 승률 그래프가 역전되기도 합니다. 퀴즈에서 이 둘이 붙는다면, 현재 메타에서 &apos;몰락한 왕의 검&apos; 같은 안티 탱커 아이템의 효율을 고려해 보세요.</p>
           </div>
           <div>
             <h3 className="font-bold text-lg mb-2">2. 암살자(Assassin) vs 마법사(Mage)</h3>
@@ -101,7 +108,7 @@ const GuidePage = () => {
           </div>
           <div>
             <h3 className="font-bold text-lg mb-2">3. 원거리 딜러(ADC) 간의 상성</h3>
-            <p className="text-gray-700">원거리 딜러는 사거리 차이가 승패를 결정짓습니다. 사거리가 긴 케이틀린이나 애쉬는 초반 주도권을 잡기 유리하지만, 후반 한타 기여도에서는 베인이나 카이사 같은 하이퍼 캐리형 챔피언에게 밀릴 수 있습니다. 퀴즈의 정답 기준은 '최종 승리'이므로 후반 밸류를 고려하는 것이 팁입니다.</p>
+            <p className="text-gray-700">원거리 딜러는 사거리 차이가 승패를 결정짓습니다. 사거리가 긴 케이틀린이나 애쉬는 초반 주도권을 잡기 유리하지만, 후반 한타 기여도에서는 베인이나 카이사 같은 하이퍼 캐리형 챔피언에게 밀릴 수 있습니다. 퀴즈의 정답 기준은 &apos;최종 승리&apos;이므로 후반 밸류를 고려하는 것이 팁입니다.</p>
           </div>
         </div>
       </section>
@@ -124,7 +131,7 @@ const GuidePage = () => {
 
             <div className="border-l-4 border-red-500 pl-4">
               <h3 className="font-bold text-lg text-gray-900">3. 성장 곡선(Scaling)과 시간대별 승률</h3>
-              <p className="text-sm md:text-base">소위 '유통기한'이라 불리는 <strong>초반 강력한 챔피언(예: 엘리스, 판테온)</strong>과 후반에 압도적인 <strong>왕귀형 챔피언(예: 케일, 카사딘)</strong>의 대결에서는 현재 메타의 평균 게임 시간이 정답을 가르는 기준이 됩니다. 도전! 롤든벨은 현재 메타의 평균 경기 시간을 고려하여 가장 확률 높은 쪽을 정답으로 도출합니다.</p>
+              <p className="text-sm md:text-base">소위 &apos;유통기한&apos;이라 불리는 <strong>초반 강력한 챔피언(예: 엘리스, 판테온)</strong>과 후반에 압도적인 <strong>왕귀형 챔피언(예: 케일, 카사딘)</strong>의 대결에서는 현재 메타의 평균 게임 시간이 정답을 가르는 기준이 됩니다. 도전! 롤든벨은 현재 메타의 평균 경기 시간을 고려하여 가장 확률 높은 쪽을 정답으로 도출합니다.</p>
             </div>
           </div>
         </div>
