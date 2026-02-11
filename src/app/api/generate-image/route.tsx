@@ -32,15 +32,14 @@ export async function GET(request: Request) {
     {
       width: 1200,
       height: 400,
-      // headers: {
-      //   // 1년 동안 브라우저 및 CDN에 캐시 (강력 추천)
-      //   'Cache-Control': 'public, imuttable, no-transform, s-maxage=31536000, max-age=31536000',
-      // },
       headers: {
-        // 개발 중에는 캐시를 막아버립니다.
-        'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
-        'Pragma': 'no-cache',
-        'Expires': '0',
+        // 1년 동안 브라우저 및 CDN에 캐시 (강력 추천)
+        'Cache-Control': 'public, imuttable, no-transform, s-maxage=31536000, max-age=31536000',
+
+        //   // 개발 중에는 캐시를 막아버립니다.
+        //   'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+        //   'Pragma': 'no-cache',
+        //   'Expires': '0',
       },
     }
   );
