@@ -11,7 +11,7 @@ interface CustomImageProps {
 const CustsomImage = ({ text }: CustomImageProps) => {
   const src = `/api/generate-image?title=${encodeURIComponent(text)}`;
   return (
-    <div style={{ position: 'relative', width: '100%', aspectRatio: '16/9' }}>
+    <div style={{ position: 'relative', width: '100%', aspectRatio: '16/9', margin: '40px 0px' }}>
       <Image
         src={src}
         alt={text}
