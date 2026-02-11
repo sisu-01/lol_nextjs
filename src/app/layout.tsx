@@ -3,6 +3,7 @@ import { Noto_Sans_KR, Yeon_Sung } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header/Header";
 import Footer from "@/components/layout/Footer/Footer";
+import Script from "next/script";
 
 // Noto Sans KR 설정 (기본 폰트)
 const notoFont = Noto_Sans_KR({
@@ -52,6 +53,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
+      <Script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8512787804038939"
+        crossOrigin="anonymous"
+        strategy="afterInteractive"
+      />
       <meta charSet="utf-8" />
       <meta name='viewport' content='width=device-width, intial-scale=1.0' />
       <body className={`${notoFont.variable} ${subFont.variable} antialiased`}>
