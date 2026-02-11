@@ -1,3 +1,4 @@
+import CustsomImage from "@/components/CustomImage/CustomImage";
 import { postsData } from "@/data/posts";
 import { getCustomMetadata } from "@/lib/metadata";
 import { Metadata } from "next";
@@ -82,14 +83,12 @@ const PostPage = ({ params }: PostProps) => {
 
         {/* 본문 영역 */}
         <div className="px-6 py-8 sm:px-10">
-          {/* prose: 기본 HTML 태그들에 스타일을 입혀주는 핵심 클래스 
-            lg:prose-xl: 큰 화면에서는 글씨를 좀 더 크게
-            prose-blue: 링크 등의 색상을 파란 계열로
-          */}
+          <CustsomImage text={post.title} />
           <div 
             className="prose prose-slate max-w-none prose-lg prose-headings:font-bold prose-a:text-blue-600 hover:prose-a:text-blue-500 prose-img:rounded-xl text-black"
             dangerouslySetInnerHTML={{ __html: post.content }} 
           />
+          <CustsomImage text={'읽어주셔서 감사합니다'} />
         </div>
         
       </article>
