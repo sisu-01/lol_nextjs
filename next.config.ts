@@ -4,7 +4,10 @@ const nextConfig: NextConfig = {
   images: {
     localPatterns: [
       {
-        pathname: '/api/generate-image',
+        pathname: '/api/generate-image', // 동적 생성 API 허용
+      },
+      {
+        pathname: '/**', // public 폴더 내의 모든 이미지(/logo.svg 등) 허용
       },
     ],
     dangerouslyAllowSVG: true, // SVG를 생성할 경우 필요
