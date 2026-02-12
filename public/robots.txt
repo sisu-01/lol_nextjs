@@ -1,10 +1,7 @@
-# 1. 모든 크롤러에게 기본 허용
 User-agent: *
 Allow: /
 
-# 2. 구글 애드센스 크롤러 전용 설정 (가장 중요)
 User-agent: Mediapartners-Google
 Allow: /
 
-# 4. 사이트맵 위치 명시
 Sitemap: https://www.lol-updown.com/sitemap.xml
