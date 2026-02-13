@@ -63,7 +63,7 @@ export default function RootLayout({
         strategy="lazyOnload"
       />
       <meta charSet="utf-8" />
-      <meta name='viewport' content='width=device-width, intial-scale=1.0' />
+      <meta name='viewport' content='width=device-width, initial-scale=1.0' />
       <body className={`${notoFont.variable} ${subFont.variable} antialiased`}>
         <div className="flex flex-col h-dvh">
           <Header />
