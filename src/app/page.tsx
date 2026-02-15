@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import GameSet from "@/components/GameSet/GameSet";
+import dynamic from "next/dynamic";
 
 const BG_URLS = [
   // "https://media.giphy.com/media/3etP8HqLPVixUc9Y3s/giphy.gif",
@@ -13,6 +16,8 @@ const BG_URLS = [
   "https://media.giphy.com/media/jU2wR5WIzi1wnoHJkx/giphy.gif",
   "https://media.giphy.com/media/i8ztw1wqGxqRysjAnZ/giphy.gif"
 ];
+
+const AdSense = dynamic(() => import('@/components/Adsense/Adsense'), { ssr: false });
 
 export default function Home() {
   // const randomIndex = Math.floor(Math.random() * BG_URLS.length);
@@ -42,7 +47,7 @@ export default function Home() {
             priority // 메인 로고이므로 우선 순위 로드
           />
         </header>
-
+        <AdSense adClient="ca-pub-8512787804038939" adSlot="8240058455" />
         <div>
           <h2 className="mt-4">
             <span className="desc text-4xl sm:text-6xl text-gray-200 drop-shadow-md animate-fadeIn font-sub leading-tight">
