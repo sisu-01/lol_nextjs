@@ -47,13 +47,14 @@ export default function Home() {
             priority // 메인 로고이므로 우선 순위 로드
           />
         </header>
-        <AdSense adClient="ca-pub-8512787804038939" adSlot="8240058455" />
+        
         <div>
           <h2 className="mt-4">
             <span className="desc text-4xl sm:text-6xl text-gray-200 drop-shadow-md animate-fadeIn font-sub leading-tight">
               둘이 싸우면&nbsp;<span className="text-yellow-400 font-bold">누가</span>&nbsp;이길까?
             </span>
           </h2>
+          <AdSense adClient="ca-pub-8512787804038939" adSlot="8240058455" />
         </div>
 
         {/* 안내 섹션: AdSense 봇이 좋아하는 고퀄리티 텍스트 영역 */}

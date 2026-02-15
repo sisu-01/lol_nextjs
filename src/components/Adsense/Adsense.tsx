@@ -13,7 +13,7 @@ declare global {
   }
 }
 
-const AdSense = ({ adClient, adSlot, format = "auto", responsive = "false" }: AdsenseProps) => {
+const AdSense = ({ adClient, adSlot, format = "auto", responsive = "true" }: AdsenseProps) => {
   useEffect(() => {
     try {
       (window.adsbygoogle = window.adsbygoogle || []).push({});
