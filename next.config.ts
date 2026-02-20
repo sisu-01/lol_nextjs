@@ -32,7 +32,7 @@ const nextConfig: NextConfig = {
             value: '(?<role>.*)', // 쿼리 값을 캡처합니다.
           },
         ],
-        destination: '/game/:role', // 캡처한 값을 경로로 보냅니다.
+        destination: '/game/:role?role=', // 캡처한 값을 경로로 보냅니다.
         permanent: true, // 301 영구 이동 (애드센스/SEO에 필수)
       },
       {
