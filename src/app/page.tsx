@@ -27,7 +27,7 @@ export default function Home() {
 
   return (
     // <div className="w-full h-full flex flex-row justify-between items-center"
-    <div suppressHydrationWarning className="w-full h-full justify-between items-center overflow-auto"
+    <div suppressHydrationWarning className="flex align-center w-full h-full justify-between items-center overflow-auto"
       style={{
         backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(${BG_URLS[randomIndex]})`,
         backgroundColor: "#3f3f3f",
@@ -44,15 +44,15 @@ export default function Home() {
             src="/logo.svg" 
             width={700} 
             height={200} 
-            className="h-auto w-full max-w-120" 
+            className="h-auto w-full max-w-150" 
             alt="도전! 롤든벨 로고" 
             priority // 메인 로고이므로 우선 순위 로드
           />
         </header>
         
         <div>
-          <h2 className="mt-4">
-            <span className="desc text-4xl sm:text-6xl text-gray-200 drop-shadow-md animate-fadeIn font-sub leading-tight">
+          <h2>
+            <span className="desc text-4xl sm:text-5xl text-gray-200 drop-shadow-md animate-fadeIn font-sub leading-tight">
               둘이 싸우면&nbsp;<span className="text-yellow-400 font-bold">누가</span>&nbsp;이길까?
             </span>
           </h2>
