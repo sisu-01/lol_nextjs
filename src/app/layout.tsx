@@ -69,7 +69,7 @@ export default function RootLayout({
         <div className="flex flex-col h-dvh">
           {/* <Header /> */}
           <AdBar position="header"/>
-          <main className="absolute top-11.25 sm:top-23.75 bottom-11.25 sm:bottom-23.75 overflow-hidden flex-1 w-full">
+          <main className="absolute top-11.25 sm:top-22.5 bottom-11.25 sm:bottom-22.5 overflow-hidden flex-1 w-full">
             {children}
           </main>
           <AdBar position="footer"/>
