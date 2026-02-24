@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import GameSet from "@/components/GameSet/GameSet";
 import dynamic from "next/dynamic";
+import { useState } from "react";
 
 const BG_URLS = [
   // "https://media.giphy.com/media/3etP8HqLPVixUc9Y3s/giphy.gif",
@@ -20,14 +21,15 @@ const BG_URLS = [
 const AdSense = dynamic(() => import('@/components/Adsense/Adsense'), { ssr: false });
 
 export default function Home() {
-  // const randomIndex = Math.floor(Math.random() * BG_URLS.length);
+  const [randomIndex] = useState(() => Math.floor(Math.random() * BG_URLS.length));
+  
   // sessionStorage.setItem('refresh', 'false');
 
   return (
     // <div className="w-full h-full flex flex-row justify-between items-center"
-    <div className="w-full h-full justify-between items-center overflow-auto"
+    <div suppressHydrationWarning className="w-full h-full justify-between items-center overflow-auto"
       style={{
-        // backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(${BG_URLS[randomIndex]})`,
+        backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(${BG_URLS[randomIndex]})`,
         backgroundColor: "#3f3f3f",
         backgroundPosition: "center",
         backgroundSize: "cover",
