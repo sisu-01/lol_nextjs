@@ -55,7 +55,7 @@ export default function Home() {
               둘이 싸우면&nbsp;<span className="text-yellow-400 font-bold">누가</span>&nbsp;이길까?
             </span>
           </h2>
-          <AdSense adClient="ca-pub-8512787804038939" adSlot="8240058455" />
+          {/* <AdSense adClient="ca-pub-8512787804038939" adSlot="8240058455" /> */}
         </div>
 
         {/* 안내 섹션: AdSense 봇이 좋아하는 고퀄리티 텍스트 영역 */}
