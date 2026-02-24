@@ -24,7 +24,7 @@ const AdBar = ({ position }: adBarProps) => {
   }
 
   return (
-    <div className={`w-full h-12.5 sm:h-25 flex justify-center items-center absolute ${css[position]} overflow-hidden z-10`}>
+    <div className={`w-full h-12.5 sm:h-25 flex justify-center items-center absolute ${css[position]} overflow-hidden z-10 bg-black`}>
       {slots[position].map((slot) => (
         <AdSense key={SLOTS[slot]} slot={SLOTS[slot]} />
       ))}
