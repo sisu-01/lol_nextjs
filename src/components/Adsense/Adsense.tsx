@@ -1,10 +1,9 @@
+"use client";
+
 import { useEffect } from 'react';
 
 interface AdsenseProps {
-  adClient: string
-  adSlot: string
-  format?: string
-  responsive?: string
+  slot: number;
 }
 
 declare global {
@@ -13,7 +12,7 @@ declare global {
   }
 }
 
-const AdSense = ({ adClient, adSlot, format = "auto", responsive = "true" }: AdsenseProps) => {
+const AdSense = ({ slot }: AdsenseProps) => {
   useEffect(() => {
     try {
       (window.adsbygoogle = window.adsbygoogle || []).push({});
@@ -26,10 +25,10 @@ const AdSense = ({ adClient, adSlot, format = "auto", responsive = "true" }: Ads
     <ins
       className="adsbygoogle"
       style={{ display: "block" }}
-      data-ad-client={adClient}
-      data-ad-slot={adSlot}
-      data-ad-format={format}
-      data-full-width-responsive={responsive}
+      data-ad-client="ca-pub-8512787804038939"
+      data-ad-slot={slot}
+      data-ad-format="horizontal"
+      data-full-width-responsive="true"
     ></ins>
   );
 };

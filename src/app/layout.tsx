@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Noto_Sans_KR, Yeon_Sung } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/layout/Header/Header";
-import Footer from "@/components/layout/Footer/Footer";
+// import Header from "@/components/layout/Header/Header";
+// import Footer from "@/components/layout/Footer/Footer";
 import Script from "next/script";
+import AdBar from "@/components/layout/Adbar/Adbar";
 
 // Noto Sans KR 설정 (기본 폰트)
 const notoFont = Noto_Sans_KR({
@@ -66,11 +67,13 @@ export default function RootLayout({
       <meta name='viewport' content='width=device-width, initial-scale=1.0' />
       <body className={`${notoFont.variable} ${subFont.variable} antialiased`}>
         <div className="flex flex-col h-dvh">
-          <Header />
+          {/* <Header /> */}
+          <AdBar position="header"/>
           <main className="absolute top-11.25 sm:top-23.75 bottom-11.25 sm:bottom-23.75 overflow-hidden flex-1 w-full">
             {children}
           </main>
-          <Footer />
+          <AdBar position="footer"/>
+          {/* <Footer /> */}
         </div>
       </body>
     </html>
