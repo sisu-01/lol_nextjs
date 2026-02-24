@@ -60,7 +60,7 @@ export default function Home() {
         </div>
 
         {/* 안내 섹션: AdSense 봇이 좋아하는 고퀄리티 텍스트 영역 */}
-        <article className="mt-12 p-6 bg-gray-900/80 backdrop-blur-sm text-gray-300 rounded-2xl border border-gray-700 leading-relaxed text-sm md:text-base max-w-3xl shadow-2xl">
+        {/* <article className="mt-12 p-6 bg-gray-900/80 backdrop-blur-sm text-gray-300 rounded-2xl border border-gray-700 leading-relaxed text-sm md:text-base max-w-3xl shadow-2xl">
           <section className="mb-6">
             <h2 className="text-xl font-bold text-yellow-400 mb-3 flex items-center justify-center">
               <span className="mr-2">🏆</span> 도전! 롤든벨: LoL 상성 퀴즈 가이드
@@ -91,7 +91,7 @@ export default function Home() {
               <strong>💡 플레이 팁:</strong> 단순히 피지컬뿐만 아니라 상성을 이해하면 밴픽 단계부터 전략적 우위를 점할 수 있습니다. 반복 학습을 통해 승률을 높여보세요!
             </p>
           </section>
-        </article>
+        </article> */}
 
         <p className="text-lg text-yellow-200 font-medium mt-6 animate-bounce">
           👇 라인전 승패 말고 &apos;최종 승자&apos;를 맞춰보세요! 😋
@@ -99,21 +99,18 @@ export default function Home() {
 
         <GameSet />
 
-        {/* <div className="text-gray-300 text-sm sm:text-base leading-4 mt-4">
+        <div className="text-gray-300 text-sm sm:text-base leading-4 mt-4">
           승률 데이터는&nbsp;<span className="font-bold">실시간 OP.GG 에메랄드 티어 이상</span>&nbsp;기준입니다.
-        </div> */}
-        <div className="text-gray-400 text-xs sm:text-sm mt-4 italic">
-          * 승률 데이터는 &apos;도전! 롤든벨&apos;만의 방식으로 수집하여 매우 신뢰도가 높은&nbsp;<span className="font-bold">실시간 에메랄드 티어 이상</span>&nbsp;통계를 기준으로 합니다.
         </div>
 
-        <nav className="flex flex-col sm:flex-row gap-4 my-10">
+        {/* <nav className="flex flex-col sm:flex-row gap-4 my-10">
           <Link href={'/news'} className="bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition-all transform hover:-translate-y-1" >
             🗞️ 최신 롤 소식
           </Link>
           <Link href={'/guide'} className="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition-all transform hover:-translate-y-1" >
             🤔 이용 가이드
           </Link>
-        </nav>
+        </nav> */}
 
       </div>
       <div className="hidden md:block p-4">
