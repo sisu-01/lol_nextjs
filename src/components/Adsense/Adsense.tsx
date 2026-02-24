@@ -24,11 +24,11 @@ const AdSense = ({ slot }: AdsenseProps) => {
   return (
     <ins
       className="adsbygoogle"
-      style={{ display: "block" }}
       data-ad-client="ca-pub-8512787804038939"
       data-ad-slot={slot}
       data-ad-format="horizontal"
       data-full-width-responsive="true"
+      style={{ display: "block", width: "100%", zIndex: 11 }}
     ></ins>
   );
 };
