@@ -44,7 +44,7 @@ export default function Home() {
             src="/logo.svg" 
             width={700} 
             height={200} 
-            className="h-auto w-full max-w-125 md:max-w-175" 
+            className="h-auto w-full max-w-120" 
             alt="도전! 롤든벨 로고" 
             priority // 메인 로고이므로 우선 순위 로드
           />
