@@ -37,7 +37,7 @@ export default function Home() {
       }}
     >
       <div className="w-full flex flex-col justify-center items-center gap-5 text-center px-4 py-10">
-        <header>
+        <header className="w-full flex justify-center">
           {/* SEO를 위한 H1 및 로고 최적화 */}
           <h1 className="sr-only">도전! 롤든벨 - 리그 오브 레전드 상성 퀴즈</h1>
           <Image 
