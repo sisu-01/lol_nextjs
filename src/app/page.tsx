@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import GameSet from "@/components/GameSet/GameSet";
 import dynamic from "next/dynamic";
 import { useState } from "react";
