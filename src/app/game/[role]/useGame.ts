@@ -212,7 +212,7 @@ export const useGame = (role: RoleType) => {
     img1.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${currentData[first.chmpA.id].eng}_0.jpg`;
     const img2 = new Image();
     img2.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${currentData[first.chmpB.id].eng}_0.jpg`;
-    await wait(1000); // 로딩 테스트를 위해서 고의적으로 지연.
+    // await wait(1000); // 로딩 테스트를 위해서 고의적으로 지연.
 
     if (first && second) {
       dispatch({ type: "GAME_START", payload: { first, second } });
