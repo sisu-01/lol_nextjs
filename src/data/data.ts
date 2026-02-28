@@ -10,3 +10,5 @@ export const rolesData: {id: RoleType; txt: string;}[] = [
 ];
 
 export const rolesArray: RoleType[] = ["all", "top", "jungle", "mid", "adc", "support"];
+
+export const AVERAGE_SCORE = 5;

@@ -1,11 +1,51 @@
 // import { useNavigate } from "react-router-dom";
 // import GoogldAds from "../GoogleAds";
 
+import { AVERAGE_SCORE } from "@/data/data";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 interface gameOverProps {
   score: number;
   gameStart: () => void;
+}
+
+const getTier = (score: number) => {
+  const k = score / AVERAGE_SCORE;
+
+  // 최상위 티어 (단계 없음)
+  if (k >= 5.0) return { tier: "Challenger", rank: "" };
+  if (k >= 4.0) return { tier: "Grandmaster", rank: "" };
+  if (k >= 3.2) return { tier: "Master", rank: "" };
+
+  // 단계별 티어 정의 (minK: 해당 티어 4단계 진입점, step: 단계별 필요한 K값 증가량)
+  const tiers = [
+    { name: "Diamond",  minK: 2.2, maxK: 3.2 },
+    { name: "Emerald",  minK: 1.6, maxK: 2.2 },
+    { name: "Platinum", minK: 1.1, maxK: 1.6 },
+    { name: "Gold",     minK: 0.8, maxK: 1.1 },
+    { name: "Silver",   minK: 0.5, maxK: 0.8 },
+    { name: "Bronze",   minK: 0.2, maxK: 0.5 },
+    { name: "Iron",     minK: 0.0, maxK: 0.2 }
+  ];
+
+  for (const t of tiers) {
+    if (k >= t.minK) {
+      // 해당 티어 내에서의 위치 계산 (4단계 -> 1단계 순)
+      const range = t.maxK - t.minK;
+      const progress = k - t.minK;
+      const step = range / 4;
+      
+      // 1~4단계 결정 (소수점 버림 후 역순 정렬)
+      let subRank = 4 - Math.floor(progress / step);
+      if (subRank < 1) subRank = 1; // 경계값 보정
+
+      return {
+        tier: t.name,
+        rank: subRank
+      };
+    }
+  }
 }
 
 const GameOver = ({ score, gameStart }: gameOverProps) => {
@@ -16,7 +56,8 @@ const GameOver = ({ score, gameStart }: gameOverProps) => {
   const goToMain = () => {
     router.push("/");
   }
-
+  const { tier, rank } =  getTier(score);
+  
   const url = "https://media1.tenor.com/m/MusbmvXoZXYAAAAd/lol-defeat-game.gif";
 
   return (
@@ -33,23 +74,25 @@ const GameOver = ({ score, gameStart }: gameOverProps) => {
       <div className="hidden md:block p-4">
         {/* <GoogldAds /> */}
       </div>
-
       {/* 중앙 결과 카드 */}
       <div className="flex flex-col justify-center items-center w-full px-4">
         <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl flex flex-col items-center gap-6 max-w-md w-full">
-
           <h2 className="text-3xl font-bold text-gray-900 drop-shadow">
             게임 종료!
           </h2>
-
           <div className="text-xl font-semibold text-gray-800">
             당신의 점수: <span className="text-blue-600">{score}</span>
           </div>
-
-          <div className="text-gray-700">
-            유저 평균 점수: <span className="italic text-gray-500">준비중…</span>
+          {/* <div className="text-gray-700">
+            유저 평균 점수: <span className="italic text-gray-500">{AVERAGE_SCORE}</span>
+          </div> */}
+          <div>
+            <Image src={`/images/tiers/${tier}.png`} width={200} height={200} alt={tier} />
           </div>
-
+          <div className="text-gray-700">
+            티어: <span className="italic text-gray-500">{tier}{rank && ` ${rank}`}</span>
+          </div>
+          
           {/* 버튼 영역 */}
           <div className="flex flex-row gap-4">
             <button
