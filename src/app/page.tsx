@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import GameSet from "@/components/GameSet/GameSet";
-import dynamic from "next/dynamic";
 import { useState } from "react";
 
 const BG_URLS = [
@@ -16,8 +15,6 @@ const BG_URLS = [
   "https://media.giphy.com/media/jU2wR5WIzi1wnoHJkx/giphy.gif",
   "https://media.giphy.com/media/i8ztw1wqGxqRysjAnZ/giphy.gif"
 ];
-
-const AdSense = dynamic(() => import('@/components/Adsense/Adsense'), { ssr: false });
 
 export default function Home() {
   const [randomIndex] = useState(() => Math.floor(Math.random() * BG_URLS.length));
