@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 
 interface AdsenseProps {
   slot: number;
+  isMobile: boolean;
 }
 
 declare global {
@@ -12,7 +13,7 @@ declare global {
   }
 }
 
-const AdSense = ({ slot }: AdsenseProps) => {
+const AdSense = ({ slot, isMobile }: AdsenseProps) => {
   useEffect(() => {
     try {
       (window.adsbygoogle = window.adsbygoogle || []).push({});
@@ -21,6 +22,18 @@ const AdSense = ({ slot }: AdsenseProps) => {
     }
   }, []);
 
+  if (isMobile) {
+    return (
+      <ins
+        className="adsbygoogle"
+        data-ad-client="ca-pub-8512787804038939"
+        data-ad-slot={slot}
+        data-full-width-responsive="true"
+        style={{ display: "block", width: "100%", height: "50px", zIndex: 11 }}
+        suppressHydrationWarning={true}
+      ></ins>
+    );
+  }
   return (
     <ins
       className="adsbygoogle"
@@ -29,6 +42,7 @@ const AdSense = ({ slot }: AdsenseProps) => {
       data-ad-format="horizontal"
       data-full-width-responsive="true"
       style={{ display: "block", width: "100%", zIndex: 11 }}
+      suppressHydrationWarning={true}
     ></ins>
   );
 };

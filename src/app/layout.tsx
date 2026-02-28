@@ -5,6 +5,7 @@ import "./globals.css";
 // import Footer from "@/components/layout/Footer/Footer";
 import Script from "next/script";
 import AdBar from "@/components/layout/Adbar/Adbar";
+import { headers } from "next/headers";
 
 // Noto Sans KR 설정 (기본 폰트)
 const notoFont = Noto_Sans_KR({
@@ -50,11 +51,19 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  const headersList = await headers();
+  const isMobile = headersList.get('x-is-mobile') === 'true';
+
+  const mainPaddingClass = isMobile 
+    ? "top-12.5 bottom-12.5" 
+    : "top-22.5 bottom-22.5";
+
   return (
     <html lang="ko">
       <Script
@@ -68,11 +77,12 @@ export default function RootLayout({
       <body className={`${notoFont.variable} ${subFont.variable} antialiased`}>
         <div className="flex flex-col h-dvh">
           {/* <Header /> */}
-          <AdBar position="header"/>
-          <main className="absolute top-11.25 sm:top-22.5 bottom-11.25 sm:bottom-22.5 overflow-hidden flex-1 w-full">
+          <AdBar position="header" isMobile={isMobile} />
+          <main className={`absolute ${mainPaddingClass} overflow-hidden flex-1 w-full`}>
+          {/* <main className="absolute top-11.25 sm:top-22.5 bottom-11.25 sm:bottom-22.5 overflow-hidden flex-1 w-full"> */}
             {children}
           </main>
-          <AdBar position="footer"/>
+          <AdBar position="footer" isMobile={isMobile} />
           {/* <Footer /> */}
         </div>
       </body>
