@@ -8,16 +8,14 @@ import { useState } from "react";
 
 const GameSet = () => {
   const [role, setRole] = useState<RoleType| ''>('');
-
   const router = useRouter();
-
-  sendGAEvent('event', 'gameStartRole', { 
-    selected_role: role 
-  });
 
   const handleGameStart = () => {
     if (!role) {alert('라인을 선택해주세요.');return;}
     document.cookie = "game_access=true; path=/; max-age=30";
+    sendGAEvent('event', 'gameStartRole', { 
+      selected_role: role 
+    });
     router.push(`/game/${role}`);
   }
 
