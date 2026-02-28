@@ -6,7 +6,7 @@ interface PlacementInfo {
   breakType: AdBreakType;
   breakName?: string;
   breakFormat: 'interstitial' | 'reward';
-  breakStatus: 'error' | 'noAdPreloaded' | 'filled' | 'viewed' | 'notShown' | [string]; 
+  breakStatus: 'notReady'|'timeout'|'invalid'|'error'|'noAdPreloaded'|'frequencyCapped'|'ignored'|'other'|'dismissed'|'viewed';
 }
 interface AdBreakOptions {
   type: AdBreakType;
@@ -32,4 +32,7 @@ declare global {
     adBreak: (options: AdBreakOptions) => void;
     adConfig: (options: AdConfigOptions) => void;
   }
+
+  function adBreak(params: AdBreakOptions): void;
+  function adConfig(params: AdConfigOptions): void;
 }
