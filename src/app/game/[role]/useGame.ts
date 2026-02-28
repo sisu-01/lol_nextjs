@@ -109,7 +109,6 @@ export const useGame = (role: RoleType) => {
   const chmpDataJsonRef = useRef<ChmpDataJsonType|null>({});
   const [state, dispatch] = useReducer(reducer, initialState);
   
-  const wait = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
   const parseFetchData = (fecthData: fetchedMatchupsType) => {
     const result: MatchDataType[] = [];
     for (const i of fecthData['datas']) {
@@ -190,6 +189,7 @@ export const useGame = (role: RoleType) => {
   }
 
   // 시작이다
+  // const wait = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
   const gameStart = useCallback(async () => {
     dispatch({ type: "GAME_INIT" });
     // ReactGA.gtag('event', 'game_start', {
