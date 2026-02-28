@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Noto_Sans_KR, Yeon_Sung } from "next/font/google";
+import { GoogleAnalytics } from '@next/third-parties/google'
 import "./globals.css";
 // import Header from "@/components/layout/Header/Header";
 // import Footer from "@/components/layout/Footer/Footer";
@@ -94,6 +95,7 @@ export default async function RootLayout({
           {/* <Footer /> */}
         </div>
       </body>
+      <GoogleAnalytics gaId="G-PEE698BPL3" />
     </html>
   );
 }
