@@ -5,6 +5,7 @@ import type { ChmpDataJsonType, fetchedMatchupsType, GameActionType, GameStateTy
 import { fetchMatchups } from "@/services/matchups";
 import { getDataDragonChmpJson } from "@/services/dDragon";
 import { playSfx } from "@/utils/sfx";
+import { sendGAEvent } from "@next/third-parties/google";
 
 const initialState: GameStateType = {
   isLoading: true,
@@ -245,6 +246,7 @@ export const useGame = (role: RoleType) => {
         dispatch({ type: "LIFE_DONW" })
         dispatch({ type: "SLIDE_START" });
       } else {
+        sendGAEvent('event', 'gameOverScore', { value: state.score });
         gameOver();
       }
     }
