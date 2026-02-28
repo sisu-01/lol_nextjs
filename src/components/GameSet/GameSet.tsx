@@ -2,6 +2,7 @@
 
 import { rolesData } from "@/data/data";
 import { RoleType } from "@/types/game";
+import { sendGAEvent } from "@next/third-parties/google";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -9,6 +10,10 @@ const GameSet = () => {
   const [role, setRole] = useState<RoleType| ''>('');
 
   const router = useRouter();
+
+  sendGAEvent('event', 'gameStartRole', { 
+    selected_role: role 
+  });
 
   const handleGameStart = () => {
     if (!role) {alert('라인을 선택해주세요.');return;}
