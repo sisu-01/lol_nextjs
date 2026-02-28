@@ -69,9 +69,6 @@ export default function Home() {
             priority // 메인 로고이므로 우선 순위 로드
           />
         </header>
-        <button onClick={() => test()}>
-          테스트버튼
-        </button>
         <div>
           <h2>
             <span className="desc text-4xl sm:text-5xl text-gray-200 drop-shadow-md animate-fadeIn font-sub leading-tight">
