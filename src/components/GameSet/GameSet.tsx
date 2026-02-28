@@ -22,7 +22,7 @@ const GameSet = () => {
   }
 
   return (
-    <div className="flex flex-col justify-center gap-6 bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-2xl max-w-md w-full">
+    <div className="flex flex-col justify-center gap-6 bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-2xl max-w-md w-full select-none">
       <div className="p-4 backdrop-blur rounded-xl shadow-inner">
         <div className="flex justify-center items-center gap-5">
           {rolesData.map(item => (
