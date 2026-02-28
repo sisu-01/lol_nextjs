@@ -1,6 +1,5 @@
 // import { useNavigate } from "react-router-dom";
 // import GoogldAds from "../GoogleAds";
-// import ReactGA from "react-ga4"
 
 import { useRouter } from "next/navigation";
 
@@ -12,19 +11,9 @@ interface gameOverProps {
 const GameOver = ({ score, gameStart }: gameOverProps) => {
   const router = useRouter();
   const playAgain = () => {
-    // ReactGA.gtag('event', 'game_restart', {
-    //   category: 'game',
-    //   label: 'restart_button',
-    //   value: 1
-    // });
     gameStart();
   }
   const goToMain = () => {
-    // ReactGA.gtag('event', 'game_main', {
-    //   category: 'game',
-    //   label: 'main_button',
-    //   value: 1
-    // });
     router.push("/");
   }
 

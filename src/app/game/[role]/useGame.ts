@@ -1,7 +1,6 @@
 // /src/pages/hame/hooks/useGame.ts
 import { useCallback, useEffect, useReducer, useRef, useState } from "react";
 import type { ChmpDataJsonType, fetchedMatchupsType, GameActionType, GameStateType, MatchDataType, RoleType } from "../../../types/game";
-// import ReactGA from "react-ga4"
 import { fetchMatchups } from "@/services/matchups";
 import { getDataDragonChmpJson } from "@/services/dDragon";
 import { playSfx } from "@/utils/sfx";
@@ -193,11 +192,6 @@ export const useGame = (role: RoleType) => {
   // const wait = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
   const gameStart = useCallback(async () => {
     dispatch({ type: "GAME_INIT" });
-    // ReactGA.gtag('event', 'game_start', {
-    //   category: 'game',
-    //   label: 'start_function',
-    //   value: 1
-    // });
 
     shuffleMatchups();
     const first = matchupsRef.current[0];
@@ -260,13 +254,7 @@ export const useGame = (role: RoleType) => {
     dispatch({ type: "NEXT_LEVEL", payload: { nextMatch, preloadNextMatch } });
   }
 
-  const gameOver = () => {
-    // ReactGA.gtag('event', 'game_score', {
-    //   category: 'game',
-    //   label: `mode_${role}`,
-    //   value: state.score
-    // });
-    
+  const gameOver = () => {    
     const stored = localStorage.getItem("highestScore");
     const highestScore = stored ? Number(stored) : 0;
 
