@@ -29,7 +29,6 @@ interface AdConfigOptions {
 
 declare global {
   interface Window {
-    adsbygoogle: {[key: string]: unknown}[];
     adBreak: (options: AdBreakOptions) => void;
     adConfig: (options: AdConfigOptions) => void;
   }
