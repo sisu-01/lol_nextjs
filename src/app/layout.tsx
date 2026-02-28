@@ -68,16 +68,18 @@ export default async function RootLayout({
     <html lang="ko">
       <Script
         async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8512787804038939"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+        data-ad-client="ca-pub-8512787804038939"
         crossOrigin="anonymous"
         strategy="lazyOnload"
-      />
-      <Script
-        async
-        data-ad-client="ca-pub-8512787804038939"
         data-ad-frequency-hint="30s"
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
       />
+      <Script id="adsense-h5-init" strategy="afterInteractive">
+        {`
+          window.adsbygoogle = window.adsbygoogle || [];
+          window.adBreak = window.adConfig = function(o) { adsbygoogle.push(o); };
+        `}
+      </Script>
       <meta charSet="utf-8" />
       <meta name='viewport' content='width=device-width, initial-scale=1.0' />
       <body className={`${notoFont.variable} ${subFont.variable} antialiased`}>
