@@ -3,7 +3,7 @@ import { useCallback, useEffect, useReducer, useRef, useState } from "react";
 import type { ChmpDataJsonType, fetchedMatchupsType, GameActionType, GameStateType, MatchDataType, RoleType } from "../../../types/game";
 import { fetchMatchups } from "@/services/matchups";
 import { getDataDragonChmpJson } from "@/services/dDragon";
-import { playSfx } from "@/utils/sfx";
+import { playSfx, preloadAllSounds } from "@/utils/sfx";
 import { sendGAEvent } from "@next/third-parties/google";
 
 const initialState: GameStateType = {
@@ -144,6 +144,7 @@ export const useGame = (role: RoleType) => {
   }
   
   const init = useCallback(async () => {
+    preloadAllSounds();
     const now = Date.now();
     const lastFetchDateTimeStr = localStorage.getItem("lastFetchDateTime");
     const hoursSinceLastFetch = lastFetchDateTimeStr
@@ -227,14 +228,14 @@ export const useGame = (role: RoleType) => {
       //   console.log("근소했다.");
       // }
       dispatch({ type: "ANIMATION_START", payload: { isCorrect } })
-      await playSfx("correct");
+      playSfx("correct");
       dispatch({ type: "ANIMATION_END" })
       dispatch({ type: "SCORE_UP" });
       dispatch({ type: "SLIDE_START" });
       // nextLevel();
     } else {
       dispatch({ type: "ANIMATION_START", payload: { isCorrect } })
-      await playSfx("wrong");
+      playSfx("wrong");
       dispatch({ type: "ANIMATION_END" })
       if (state.extraLife > 1) {
         dispatch({ type: "LIFE_DONW" })
