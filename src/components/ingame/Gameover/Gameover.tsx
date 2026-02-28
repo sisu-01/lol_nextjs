@@ -17,6 +17,11 @@ const GameOver = ({ score, gameStart }: gameOverProps) => {
     //   label: 'restart_button',
     //   value: 1
     // });
+    adBreak({
+      type: 'start', // ad shows at start of next level or restart of the game
+      name: 'start-game'
+      // Make sure to mute and pause gameplay before running ads to avoid risk of violating our policy.
+    });
     gameStart();
   }
   const goToMain = () => {
