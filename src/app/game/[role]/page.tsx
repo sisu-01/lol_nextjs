@@ -1,6 +1,6 @@
 "use client";
 
-import { use } from "react";
+import { use, useEffect } from "react";
 import { RoleType } from "@/types/game";
 import { useGame } from "./useGame";
 import { dDragonContext } from "@/context/dDragonContext";
@@ -15,15 +15,6 @@ import Versus from "@/components/ingame/Versus/Versus";
 import Slider from "@/components/ingame/_play/Slider/Slider";
 import { rolesArray } from "@/data/data";
 import { notFound } from "next/navigation";
-
-// const POSITIONS_LABEL = {
-//   'all': '전 라인',
-//   'top': '탑',
-//   'jungle': '정글',
-//   'mid': '미드',
-//   'adc': '원딜',
-//   'support': '서포터'
-// }
 
 interface PageProps {
   params: Promise<{ role: string }>;
@@ -58,6 +49,12 @@ const GamePage = ({ params }: PageProps) => {
     isCorrectChampion,
     switchCurrentAndNextMatch,
   } = useGame(role);
+  
+  useEffect(() => {
+    // 쿠키 삭제 (만료 시간을 과거로 설정)
+    document.cookie = "game_access=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+  }, []);
+
   
   if (error) return <Error />;
   if (gameover) return <GameOver score={score} gameStart={gameStart} />;

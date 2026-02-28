@@ -17,6 +17,7 @@ const GameSet = () => {
 
   const handleGameStart = () => {
     if (!role) {alert('라인을 선택해주세요.');return;}
+    document.cookie = "game_access=true; path=/; max-age=30";
     router.push(`/game/${role}`);
   }
 
