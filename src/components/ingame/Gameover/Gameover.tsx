@@ -42,10 +42,11 @@ const getTier = (score: number) => {
 
       return {
         tier: t.name,
-        rank: subRank
+        rank: subRank.toString()
       };
     }
   }
+  return { tier: "Iron", rank: "4" }; // <- 반환값 고정용
 }
 
 const GameOver = ({ score, gameStart }: gameOverProps) => {
@@ -56,7 +57,7 @@ const GameOver = ({ score, gameStart }: gameOverProps) => {
   const goToMain = () => {
     router.push("/");
   }
-  const { tier, rank } =  getTier(score);
+  const { tier, rank } = getTier(score);
   
   const url = "https://media1.tenor.com/m/MusbmvXoZXYAAAAd/lol-defeat-game.gif";
 
