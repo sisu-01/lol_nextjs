@@ -20,7 +20,7 @@ const POSITION_CLASSES = {
   footer: 'bottom-0',
 };
 
-const AdBar = async ({ position, isMobile }: AdBarProps) => {
+const AdBar = ({ position, isMobile }: AdBarProps) => {
   const activeSlot = isMobile? AD_SLOTS.mobile[position] : AD_SLOTS.pc[position];
 
   return (
