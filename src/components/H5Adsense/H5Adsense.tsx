@@ -4,6 +4,12 @@ import { useEffect } from 'react';
 
 const H5Adsense = () => {
   useEffect(() => {
+    adBreak({
+      type: 'preroll',
+      adBreakDone: (placementInfo) => {
+        h5AdsenseDebug(placementInfo);
+      },
+    })
     const handleVisibilityChange = () => {
       // 사용자가 탭을 떠났을 때 (다른 탭을 보거나 창을 내렸을 때)
       if (document.hidden) {
