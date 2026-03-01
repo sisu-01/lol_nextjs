@@ -71,50 +71,43 @@ const GameOver = ({ score, gameStart }: gameOverProps) => {
         backgroundRepeat: "no-repeat"
       }}
     >
-      {/* 좌측 광고 */}
-      <div className="hidden md:block p-4">
-        {/* <GoogldAds /> */}
-      </div>
       {/* 중앙 결과 카드 */}
       <div className="flex flex-col justify-center items-center w-full px-4">
-        <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl flex flex-col items-center gap-6 max-w-md w-full">
-          <h2 className="text-3xl font-bold text-gray-900 drop-shadow">
-            게임 종료!
+        <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl flex flex-col items-center max-w-md w-full">
+          <h2 className="text-3xl font-bold text-gray-900 drop-shadow mb-1">
+            GAME OVER
           </h2>
-          <div className="text-xl font-semibold text-gray-800">
-            당신의 점수: <span className="text-blue-600">{score}</span>
+          <div className="text-xl font-semibold text-gray-800 mb-2">
+            당신의 점수
+          </div>
+          <div className="text-4xl text-gray-800 font-bold">
+            {score}
           </div>
           {/* <div className="text-gray-700">
             유저 평균 점수: <span className="italic text-gray-500">{AVERAGE_SCORE}</span>
           </div> */}
           <div>
-            <Image src={`/images/tiers/${tier}.png`} width={200} height={200} alt={tier} />
+            <Image src={`/images/tiers/${tier}.png`} width={250} height={250} alt={tier} />
           </div>
-          <div className="text-gray-700">
-            티어: <span className="italic text-gray-500">{tier}{rank && ` ${rank}`}</span>
+          <div className="text-4xl text-gray-800 font-bold mb-4">
+            {tier}{rank && ` ${rank}`}
           </div>
-          
           {/* 버튼 영역 */}
-          <div className="flex flex-row gap-4">
+          <div className="flex flex-row gap-4 mt-4">
             <button
               onClick={playAgain}
               className="bg-blue-600 text-white px-5 py-2 rounded-lg shadow-md hover:bg-blue-700 transition"
             >
-              다시하기
+              ⟳ 다시하기
             </button>
             <button
               onClick={goToMain}
               className="bg-gray-700 text-white px-5 py-2 rounded-lg shadow-md hover:bg-gray-800 transition"
             >
-              메인으로
+              🏠 메인으로
             </button>
           </div>
         </div>
-      </div>
-
-      {/* 우측 광고 */}
-      <div className="hidden md:block p-4">
-        {/* <GoogldAds /> */}
       </div>
     </div>
   );
