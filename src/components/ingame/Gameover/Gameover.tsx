@@ -14,19 +14,19 @@ const getTier = (score: number) => {
   const k = score / AVERAGE_SCORE;
 
   // 최상위 티어 (단계 없음)
-  if (k >= 5.0) return { tier: "Challenger", rank: "" };
-  if (k >= 4.0) return { tier: "Grandmaster", rank: "" };
-  if (k >= 3.2) return { tier: "Master", rank: "" };
+  if (k >= 5.0) return { image: "challenger", tier: "Challenger", rank: "" };
+  if (k >= 4.0) return { image: "grandmaster",tier: "Grandmaster", rank: "" };
+  if (k >= 3.2) return { image: "master",     tier: "Master", rank: "" };
 
   // 단계별 티어 정의 (minK: 해당 티어 4단계 진입점, step: 단계별 필요한 K값 증가량)
   const tiers = [
-    { name: "Diamond",  minK: 2.2, maxK: 3.2 },
-    { name: "Emerald",  minK: 1.6, maxK: 2.2 },
-    { name: "Platinum", minK: 1.1, maxK: 1.6 },
-    { name: "Gold",     minK: 0.8, maxK: 1.1 },
-    { name: "Silver",   minK: 0.5, maxK: 0.8 },
-    { name: "Bronze",   minK: 0.2, maxK: 0.5 },
-    { name: "Iron",     minK: 0.0, maxK: 0.2 }
+    { image: "diamond", name: "Diamond",  minK: 2.2, maxK: 3.2 },
+    { image: "emerald", name: "Emerald",  minK: 1.6, maxK: 2.2 },
+    { image: "platinum",name: "Platinum", minK: 1.1, maxK: 1.6 },
+    { image: "gold",    name: "Gold",     minK: 0.8, maxK: 1.1 },
+    { image: "silver",  name: "Silver",   minK: 0.5, maxK: 0.8 },
+    { image: "bronze",  name: "Bronze",   minK: 0.2, maxK: 0.5 },
+    { image: "iron",    name: "Iron",     minK: 0.0, maxK: 0.2 }
   ];
 
   for (const t of tiers) {
@@ -41,12 +41,13 @@ const getTier = (score: number) => {
       if (subRank < 1) subRank = 1; // 경계값 보정
 
       return {
+        image: t.image,
         tier: t.name,
         rank: subRank.toString()
       };
     }
   }
-  return { tier: "Iron", rank: "4" }; // <- 반환값 고정용
+  return { image: "iron", tier: "Iron", rank: "4" }; // <- 반환값 고정용
 }
 
 const GameOver = ({ score, gameStart }: gameOverProps) => {
@@ -57,7 +58,7 @@ const GameOver = ({ score, gameStart }: gameOverProps) => {
   const goToMain = () => {
     router.push("/");
   }
-  const { tier, rank } = getTier(score);
+  const { image, tier, rank } = getTier(score);
   
   const url = "https://media1.tenor.com/m/MusbmvXoZXYAAAAd/lol-defeat-game.gif";
 
@@ -87,7 +88,7 @@ const GameOver = ({ score, gameStart }: gameOverProps) => {
             유저 평균 점수: <span className="italic text-gray-500">{AVERAGE_SCORE}</span>
           </div> */}
           <div>
-            <Image src={`/images/tiers/${tier}.png`} width={250} height={250} alt={tier} />
+            <Image src={`/images/tiers/${image}.png`} width={250} height={250} alt={tier} />
           </div>
           <div className="text-4xl text-gray-800 font-bold mb-4">
             {tier}{rank && ` ${rank}`}
