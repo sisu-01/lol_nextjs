@@ -13,7 +13,7 @@ const H5Adsense = () => {
       if (document.hidden) {
         // Google H5 Game Ads 호출 함수
         adBreak({
-          type: 'next', // 게임 외부 어쩌구 타입 광고
+          type: 'start', // 게임 외부 어쩌구 타입 광고
           name: 'tab-switch-pause',
           adBreakDone: (placementInfo) => {
             h5AdsenseDebug(placementInfo);
