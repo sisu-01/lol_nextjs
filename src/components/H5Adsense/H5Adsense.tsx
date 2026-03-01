@@ -6,7 +6,7 @@ const H5Adsense = () => {
   useEffect(() => {
     adConfig({
       preloadAdBreaks: 'on',
-      sound: 'on',
+      sound: 'off',
     });
     const handleVisibilityChange = () => {
       // 사용자가 탭을 떠났을 때 (다른 탭을 보거나 창을 내렸을 때)
