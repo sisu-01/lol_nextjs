@@ -74,7 +74,8 @@ export default async function RootLayout({
         data-ad-client="ca-pub-8512787804038939"
         crossOrigin="anonymous"
         strategy="lazyOnload"
-        data-ad-frequency-hint="30s"
+        data-ad-frequency-hint="120s"
+        data-adbreak-test="on"
       />
       <Script id="adsense-h5-init" strategy="afterInteractive">
         {`
