@@ -7,6 +7,7 @@ import "./globals.css";
 import Script from "next/script";
 import AdBar from "@/components/layout/Adbar/Adbar";
 import { headers } from "next/headers";
+import H5Adsense from "@/components/H5Adsense/H5Adsense";
 
 // Noto Sans KR 설정 (기본 폰트)
 const notoFont = Noto_Sans_KR({
@@ -95,6 +96,7 @@ export default async function RootLayout({
           {/* <Footer /> */}
         </div>
       </body>
+      <H5Adsense />
       <GoogleAnalytics gaId="G-PEE698BPL3" />
     </html>
   );
