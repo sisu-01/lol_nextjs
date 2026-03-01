@@ -228,14 +228,14 @@ export const useGame = (role: RoleType) => {
       //   console.log("근소했다.");
       // }
       dispatch({ type: "ANIMATION_START", payload: { isCorrect } })
-      playSfx("correct");
+      await playSfx("correct");
       dispatch({ type: "ANIMATION_END" })
       dispatch({ type: "SCORE_UP" });
       dispatch({ type: "SLIDE_START" });
       // nextLevel();
     } else {
       dispatch({ type: "ANIMATION_START", payload: { isCorrect } })
-      playSfx("wrong");
+      await playSfx("wrong");
       dispatch({ type: "ANIMATION_END" })
       if (state.extraLife > 1) {
         dispatch({ type: "LIFE_DONW" })
