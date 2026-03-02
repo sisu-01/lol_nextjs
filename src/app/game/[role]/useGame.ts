@@ -167,6 +167,24 @@ export const useGame = (role: RoleType) => {
     matchupsRef.current = gameData;
   }, [role]);
 
+  const preloadTiers = () => {
+    const TIER_IMAGES = [
+      '/images/tiers/iron.png',
+      '/images/tiers/bronze.png',
+      '/images/tiers/silver.png',
+      '/images/tiers/gold.png',
+      '/images/tiers/platinum.png',
+      '/images/tiers/emerald.png',
+      '/images/tiers/diamond.png',
+      '/images/tiers/master.png',
+      '/images/tiers/grandmastetr.png',
+      '/images/tiers/challenger.png',
+    ];
+    TIER_IMAGES.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }
 
   const shuffleMatchups = () => {
     const arr = [...matchupsRef.current];
@@ -196,6 +214,7 @@ export const useGame = (role: RoleType) => {
     img1.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${currentData[first.chmpA.id].eng}_0.jpg`;
     const img2 = new Image();
     img2.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${currentData[first.chmpB.id].eng}_0.jpg`;
+    preloadTiers();
     await wait(1000); // 로딩 테스트를 위해서 고의적으로 지연.
 
     if (first && second) {
