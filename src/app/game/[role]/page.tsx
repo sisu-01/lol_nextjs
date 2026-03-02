@@ -70,7 +70,7 @@ const GamePage = ({ params }: PageProps) => {
         <link rel="canonical" href={`https://www.lol-updown.com/game?role=${currentMatch.position}`} />
       </Helmet> */}
       <ScoreBoard score={score} />
-      <LifeBoard extraLife={extraLife} rewardLife={rewardLife} addRewardLife={addRewardLife} />
+      <LifeBoard extraLife={extraLife} rewardLife={rewardLife} addRewardLife={addRewardLife} isPending={isPending} />
       <Animation isAnimating={isAnimating} />
       {!isSliding ? (
         <>

@@ -2,11 +2,13 @@ interface lifeBoardProps {
   extraLife: number;
   rewardLife: boolean;
   addRewardLife: () => void;
+  isPending: boolean;
 }
 
-const LifeBoard = ({ extraLife, rewardLife, addRewardLife }: lifeBoardProps) => {
+const LifeBoard = ({ extraLife, rewardLife, addRewardLife, isPending }: lifeBoardProps) => {
 
   const rewardButtonHandler = () => {
+    if (isPending) return;
     addRewardLife();
   }
 
