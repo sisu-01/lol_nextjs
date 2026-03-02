@@ -178,7 +178,7 @@ export const useGame = (role: RoleType) => {
   }
 
   // 시작이다
-  // const wait = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+  const wait = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
   const gameStart = useCallback(async () => {
     dispatch({ type: "GAME_INIT" });
 
@@ -194,9 +194,10 @@ export const useGame = (role: RoleType) => {
     }
     const img1 = new Image();
     img1.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${currentData[first.chmpA.id].eng}_0.jpg`;
+    console.log(img1.src);
     const img2 = new Image();
     img2.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${currentData[first.chmpB.id].eng}_0.jpg`;
-    // await wait(1000); // 로딩 테스트를 위해서 고의적으로 지연.
+    await wait(1000); // 로딩 테스트를 위해서 고의적으로 지연.
 
     if (first && second) {
       dispatch({ type: "GAME_START", payload: { first, second } });
