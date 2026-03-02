@@ -5,7 +5,7 @@ import { fetchMatchups } from "@/services/matchups";
 import { getDataDragonChmpJson } from "@/services/dDragon";
 import { playSfx, preloadAllSounds } from "@/utils/sfx";
 import { sendGAEvent } from "@next/third-parties/google";
-import { h5AdsenseDebug } from "@/utils/h5adsense";
+// import { h5AdsenseDebug } from "@/utils/h5adsense";
 
 const initialState: GameStateType = {
   isLoading: true,
@@ -278,9 +278,9 @@ export const useGame = (role: RoleType) => {
       adViewed: () => {
         dispatch({ type: "LIFE_UP" });
       },
-      adBreakDone: (placementInfo) => {
-        h5AdsenseDebug(placementInfo);
-      },
+      // adBreakDone: (placementInfo) => {
+      //   h5AdsenseDebug(placementInfo);
+      // },
     });
   }
 
