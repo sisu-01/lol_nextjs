@@ -88,7 +88,7 @@ const GameOver = ({ score, gameStart }: gameOverProps) => {
             유저 평균 점수: <span className="italic text-gray-500">{AVERAGE_SCORE}</span>
           </div> */}
           <div>
-            <Image src={`/images/tiers/${image}.png`} width={250} height={250} alt={tier} />
+            <Image src={`/images/tiers/${image}.png?v=2`} width={250} height={250} alt={tier} />
           </div>
           <div className="text-4xl text-gray-800 font-bold mb-4">
             {tier}{rank && ` ${rank}`}
