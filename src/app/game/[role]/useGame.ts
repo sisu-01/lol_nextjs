@@ -5,6 +5,7 @@ import { fetchMatchups } from "@/services/matchups";
 import { getDataDragonChmpJson } from "@/services/dDragon";
 import { playSfx, preloadAllSounds } from "@/utils/sfx";
 import { sendGAEvent } from "@next/third-parties/google";
+import { h5AdsenseDebug } from "@/utils/h5adsense";
 
 const initialState: GameStateType = {
   isLoading: true,
@@ -16,7 +17,7 @@ const initialState: GameStateType = {
   round: 0,
   score: 0,
   extraLife: 3,
-  adLife: false,
+  rewardLife: false,
   gameover: false,
   currentMatch: null,
   nextMatch: null
@@ -72,7 +73,7 @@ const reducer = (state: GameStateType, action: GameActionType): GameStateType =>
         ...state,
         showAdModal: true,
         extraLife: state.extraLife + 1,
-        adLife: true
+        rewardLife: true
       }
     case "MODAL_HIDE":
       return {
@@ -87,7 +88,7 @@ const reducer = (state: GameStateType, action: GameActionType): GameStateType =>
     case "LIFE_UP":
       return {
         ...state,
-        adLife: true,
+        rewardLife: true,
         extraLife: state.extraLife + 1
       }
     case "GAME_OVER":
@@ -255,6 +256,28 @@ export const useGame = (role: RoleType) => {
     dispatch({ type: "NEXT_LEVEL", payload: { nextMatch, preloadNextMatch } });
   }
 
+  const addRewardLife = () => {
+    adBreak({
+      type: 'reward',
+      name: 'addRewardLife',
+      beforeReward: (showAdFn) => {
+        const userAgreed = confirm("광고를 시청하고 추가 목숨을 받으시겠습니까?");
+        if (userAgreed) {
+          showAdFn();
+        }
+      },
+      adDismissed: () => {
+        console.log("광고 건너뜀: 보상을 지급하지 않습니다.");
+      },
+      adViewed: () => {
+        dispatch({ type: "LIFE_UP" });
+      },
+      adBreakDone: (placementInfo) => {
+        h5AdsenseDebug(placementInfo);
+      },
+    });
+  }
+
   const gameOver = () => {    
     const stored = localStorage.getItem("highestScore");
     const highestScore = stored ? Number(stored) : 0;
@@ -281,5 +304,6 @@ export const useGame = (role: RoleType) => {
     setModalHide: () => dispatch({ type: "MODAL_HIDE" }),
     isCorrectChampion,
     switchCurrentAndNextMatch,
+    addRewardLife,
   };
 }

@@ -26,7 +26,7 @@ export type GameStateType = {
   score: number;
   showAdModal: boolean;
   extraLife: number;
-  adLife: boolean;
+  rewardLife: boolean;
   gameover: boolean;
   currentMatch: MatchDataType | null;
   nextMatch: MatchDataType | null;

@@ -40,6 +40,7 @@ const GamePage = ({ params }: PageProps) => {
     error,
     score,
     extraLife,
+    rewardLife,
     gameover,
     currentMatch,
     nextMatch,
@@ -48,6 +49,7 @@ const GamePage = ({ params }: PageProps) => {
     // setModalHide,
     isCorrectChampion,
     switchCurrentAndNextMatch,
+    addRewardLife,
   } = useGame(role);
   
   useEffect(() => {
@@ -70,7 +72,7 @@ const GamePage = ({ params }: PageProps) => {
         <link rel="canonical" href={`https://www.lol-updown.com/game?role=${currentMatch.position}`} />
       </Helmet> */}
       <ScoreBoard score={score} />
-      <LifeBoard extraLife={extraLife} />
+      <LifeBoard extraLife={extraLife} rewardLife={rewardLife} addRewardLife={addRewardLife} />
       <Animation isAnimating={isAnimating} />
       {!isSliding ? (
         <>
