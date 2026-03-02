@@ -36,7 +36,6 @@ const GamePage = ({ params }: PageProps) => {
     isPending,
     isAnimating,
     isSliding,
-    // showAdModal,
     error,
     score,
     extraLife,
@@ -46,7 +45,6 @@ const GamePage = ({ params }: PageProps) => {
     nextMatch,
     gameStart,
     setIsPending,
-    // setModalHide,
     isCorrectChampion,
     switchCurrentAndNextMatch,
     addRewardLife,
@@ -91,8 +89,6 @@ const GamePage = ({ params }: PageProps) => {
           switchCurrentAndNextMatch={switchCurrentAndNextMatch}
         />
       </dDragonContext.Provider>
-
-      {/* {showAdModal && <Admodal setModalHide={setModalHide} />} */}
     </>
   );
 }

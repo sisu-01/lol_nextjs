@@ -24,7 +24,6 @@ export type GameStateType = {
   error: boolean;
   round: number;
   score: number;
-  showAdModal: boolean;
   extraLife: number;
   rewardLife: boolean;
   gameover: boolean;
@@ -40,8 +39,6 @@ export type GameActionType =
   | { type: "SLIDE_START"; }
   | { type: "SCORE_UP"; }
   | { type: "NEXT_LEVEL"; payload: { nextMatch: MatchDataType; preloadNextMatch: MatchDataType} }
-  | { type: "MODAL_SHOW"; }
-  | { type: "MODAL_HIDE"; }
   | { type: "LIFE_DONW"; }
   | { type: "LIFE_UP"; }
   | { type: "GAME_OVER"; }

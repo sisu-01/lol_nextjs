@@ -12,7 +12,6 @@ const initialState: GameStateType = {
   isPending: false,
   isAnimating: null,
   isSliding: false,
-  showAdModal: false,
   error: false,
   round: 0,
   score: 0,
@@ -67,18 +66,6 @@ const reducer = (state: GameStateType, action: GameActionType): GameStateType =>
         round: state.round + 1,
         currentMatch: action.payload.nextMatch,
         nextMatch: action.payload.preloadNextMatch,
-      }
-    case "MODAL_SHOW":
-      return {
-        ...state,
-        showAdModal: true,
-        extraLife: state.extraLife + 1,
-        rewardLife: true
-      }
-    case "MODAL_HIDE":
-      return {
-        ...state,
-        showAdModal: false
       }
     case "LIFE_DONW":
       return {
@@ -219,7 +206,7 @@ export const useGame = (role: RoleType) => {
   }, []);
 
   const isCorrectChampion = async (selectId: number) => {
-    if (state.showAdModal || state.isSliding || !state.currentMatch || state.gameover) return;
+    if (state.isSliding || !state.currentMatch || state.gameover) return;
 
     const { winner } = state.currentMatch;
     const isCorrect = winner === selectId || winner === 0;
@@ -301,7 +288,6 @@ export const useGame = (role: RoleType) => {
     ...state,
     gameStart: gameStart,
     setIsPending: (value: boolean) => dispatch({ type: "GAME_PEND", payload: { value } }),
-    setModalHide: () => dispatch({ type: "MODAL_HIDE" }),
     isCorrectChampion,
     switchCurrentAndNextMatch,
     addRewardLife,
