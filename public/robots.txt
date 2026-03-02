@@ -1,7 +1,3 @@
 User-agent: *
-Allow: /
-
-User-agent: Mediapartners-Google
-Allow: /
-
-Sitemap: https://www.lol-updown.com/sitemap.xml
+Disallow: /
+Allow: /$
