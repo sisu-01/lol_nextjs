@@ -1,5 +1,5 @@
 'use client';
-import { h5AdsenseDebug } from '@/utils/h5adsense';
+// import { h5AdsenseDebug } from '@/utils/h5adsense';
 import { useEffect } from 'react';
 
 const H5Adsense = () => {
@@ -8,23 +8,23 @@ const H5Adsense = () => {
       preloadAdBreaks: 'on',
       sound: 'off',
     });
-    const handleVisibilityChange = () => {
-      // 사용자가 탭을 떠났을 때 (다른 탭을 보거나 창을 내렸을 때)
-      if (document.hidden) {
-        // Google H5 Game Ads 호출 함수
-        adBreak({
-          type: 'browse', // 게임 외부 어쩌구 타입 광고
-          name: 'tab-switch-pause',
-          adBreakDone: (placementInfo) => {
-            h5AdsenseDebug(placementInfo);
-          },
-        });
-      }
-    };
-    document.addEventListener('visibilitychange', handleVisibilityChange);
-    return () => {
-      document.removeEventListener('visibilitychange', handleVisibilityChange);
-    };
+    // const handleVisibilityChange = () => {
+    //   // 사용자가 탭을 떠났을 때 (다른 탭을 보거나 창을 내렸을 때)
+    //   if (document.hidden) {
+    //     // Google H5 Game Ads 호출 함수
+    //     adBreak({
+    //       type: 'browse', // 게임 외부 어쩌구 타입 광고
+    //       name: 'tab-switch-pause',
+    //       adBreakDone: (placementInfo) => {
+    //         h5AdsenseDebug(placementInfo);
+    //       },
+    //     });
+    //   }
+    // };
+    // document.addEventListener('visibilitychange', handleVisibilityChange);
+    // return () => {
+    //   document.removeEventListener('visibilitychange', handleVisibilityChange);
+    // };
   }, []);
   return null;
 }
