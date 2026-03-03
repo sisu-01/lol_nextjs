@@ -1,5 +1,5 @@
 'use client';
-// import { h5AdsenseDebug } from '@/utils/h5adsense';
+import { h5AdsenseDebug } from '@/utils/h5adsense';
 import { useEffect } from 'react';
 
 const H5Adsense = () => {
@@ -15,9 +15,9 @@ const H5Adsense = () => {
         adBreak({
           type: 'preroll', // 게임 외부 어쩌구 타입 광고
           name: 'tab-switch-pause',
-          // adBreakDone: (placementInfo) => {
-          //   h5AdsenseDebug(placementInfo);
-          // },
+          adBreakDone: (placementInfo) => {
+            h5AdsenseDebug(placementInfo);
+          },
         });
       }
     };
