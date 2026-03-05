@@ -1,5 +1,29 @@
-// 1. 파일 최상단에 선언 (클로저로 유지됨)
 const cache: Record<string, HTMLAudioElement> = {};
+const STORAGE_KEY = 'game-sfx-volume';
+
+let currentVolume = 0.5; // 기본 볼륨 50%
+
+if (typeof window !== 'undefined') {
+  const savedVolume = localStorage.getItem(STORAGE_KEY);
+  console.log("savedVolume", savedVolume);
+  if (savedVolume !== null) {
+    currentVolume = parseFloat(savedVolume);
+  }
+}
+
+export const getGlobalVolume = () => currentVolume;
+export const setGlobalVolume = (volume: number) => {
+  // 0.0 ~ 1.0 범위 제한
+  currentVolume = Math.max(0, Math.min(1, volume));
+  // 브라우저 저장소에 기록
+  if (typeof window !== 'undefined') {
+    localStorage.setItem(STORAGE_KEY, currentVolume.toString());
+  }
+  // 현재 캐시된 오디오 객체들의 볼륨도 실시간 업데이트
+  Object.values(cache).forEach((audio) => {
+    audio.volume = currentVolume;
+  });
+};
 
 // 2. 이 함수를 '게임 시작 페이지'가 뜰 때 미리 실행하세요.
 export const preloadAllSounds = () => {
@@ -10,6 +34,7 @@ export const preloadAllSounds = () => {
     if (!cache[path]) {
       const audio = new Audio(path);
       audio.preload = 'auto'; // 브라우저에게 미리 받으라고 명령
+      audio.volume = currentVolume;
       audio.load();           // 실제 다운로드 시작
       cache[path] = audio;    // 여기서 미리 캐시에 넣어버림!
     }

@@ -15,6 +15,7 @@ import Versus from "@/components/ingame/Versus/Versus";
 import Slider from "@/components/ingame/_play/Slider/Slider";
 import { rolesArray } from "@/data/data";
 import { notFound } from "next/navigation";
+import SoundBoard from "@/components/ingame/SoundBoard/SoundBoard";
 
 interface PageProps {
   params: Promise<{ role: string }>;
@@ -62,7 +63,6 @@ const GamePage = ({ params }: PageProps) => {
 
   return (
     <>
-    
       {/* <Helmet>
         <title>{POSITIONS_LABEL[currentMatch.position]} 퀴즈 | 도전! 롤든벨</title>
         <meta property="og:title" content={`${POSITIONS_LABEL[currentMatch.position]} 퀴즈 | 도전! 롤든벨`} />
@@ -71,6 +71,7 @@ const GamePage = ({ params }: PageProps) => {
       </Helmet> */}
       <ScoreBoard score={score} />
       <LifeBoard extraLife={extraLife} rewardLife={rewardLife} addRewardLife={addRewardLife} isPending={isPending} />
+      <SoundBoard />
       <Animation isAnimating={isAnimating} />
       {!isSliding ? (
         <>
