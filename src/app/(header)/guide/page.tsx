@@ -1,6 +1,7 @@
 import { getCustomMetadata } from "@/lib/metadata";
 import Image from "next/image";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
 export const metadata = {
   ...getCustomMetadata({
@@ -15,6 +16,7 @@ export const metadata = {
 };
 
 const GuidePage = () => {
+  notFound();
   return (
     <div className="p-8 max-w-4xl mx-auto text-gray-800 leading-relaxed overflow-y-auto h-full">
       <h1 className="text-3xl font-bold mb-8 text-white">도전! 롤든벨 완벽 가이드</h1>

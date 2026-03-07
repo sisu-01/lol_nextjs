@@ -1,6 +1,7 @@
 import { postsData } from "@/data/posts";
 import { getCustomMetadata } from "@/lib/metadata";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
 export const metadata = {
   ...getCustomMetadata({
@@ -15,7 +16,7 @@ export const metadata = {
 };
 
 const PostsPage = () => {
-
+  notFound();
   const getPreview = (content: string) => {
     // 1. 태그 제거
     const plainText = content.replace(/<[^>]*>?/gm, '');

@@ -17,6 +17,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PostProps): Promise<Metadata> {
+  notFound();
   // Next.js 15부터 params는 Promise입니다.
   const { id } = await params;
   const post = postsData.find((p) => p.id === Number(id));
