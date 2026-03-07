@@ -23,6 +23,8 @@ const subFont = Yeon_Sung({
   subsets: ["latin"],
 });
 
+const ds = "리그 오브 레전드 상성을 알아맞히는 실력 검증 게임";
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.lol-updown.com'),
   alternates: {
@@ -32,13 +34,13 @@ export const metadata: Metadata = {
     default: "도전! 롤든벨 - 실시간 롤 상성 트렌드 퀴즈",
     template: "%s | 도전! 롤든벨"
   },
-  description: "게임의 승자는 누구? 170여 명의 챔피언 상성 완벽 분석! 지금 바로 퀴즈 풀고 내 롤 실력을 테스트해보세요.",
+  description: ds,
   openGraph: {
     title: {
       default: "도전! 롤든벨 - 실시간 롤 상성 트렌드 퀴즈",
       template: "%s | 도전! 롤든벨"
     },
-    description: "게임의 승자는 누구? 170여 명의 챔피언 상성 완벽 분석! 지금 바로 퀴즈 풀고 내 롤 실력을 테스트해보세요.",
+    description: ds,
     url: new URL(`https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`),
     siteName: "도전! 롤든벨",
     type: "website",
@@ -49,7 +51,7 @@ export const metadata: Metadata = {
       default: "도전! 롤든벨 - 실시간 롤 상성 트렌드 퀴즈",
       template: "%s | 도전! 롤든벨"
     },
-    description: "게임의 승자는 누구? 170여 명의 챔피언 상성 완벽 분석! 지금 바로 퀴즈 풀고 내 롤 실력을 테스트해보세요.",
+    description: ds,
   },
 };
 
