@@ -32,11 +32,17 @@ export async function generateMetadata({ params }: PostProps): Promise<Metadata>
     : plainText;
 
   // 헬퍼 함수를 사용해 메타데이터 생성
-  return getCustomMetadata({
-    title: post.title,
-    description: description,
-    path: `/posts/${id}`, // canonical 및 og:url에 사용될 경로
-  });
+  return {
+    ...getCustomMetadata({
+      title: post.title,
+      description: description,
+      path: `/posts/${id}`,
+    }),
+    robots: {
+      index: false,
+      follow: false,
+    },
+  };
 }
 
 const PostPage = ({ params }: PostProps) => {

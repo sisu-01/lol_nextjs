@@ -2,11 +2,17 @@ import { getCustomMetadata } from "@/lib/metadata";
 import Image from "next/image";
 import Link from "next/link";
 
-export const metadata = getCustomMetadata({
-  title: "새 소식",
-  description: "리그 오브 레전드의 패치 노트를 확인하고 도전! 롤든벨의 고득점과 게임 메타를 따라잡으세요.",
-  path: "/news",
-});
+export const metadata = {
+  ...getCustomMetadata({
+    title: "새 소식",
+    description: "리그 오브 레전드의 패치 노트를 확인하고 도전! 롤든벨의 고득점과 게임 메타를 따라잡으세요.",
+    path: "/news",
+  }),
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 const NewsPage = () => {
   return (

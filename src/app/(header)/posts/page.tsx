@@ -2,11 +2,17 @@ import { postsData } from "@/data/posts";
 import { getCustomMetadata } from "@/lib/metadata";
 import Link from "next/link";
 
-export const metadata = getCustomMetadata({
-  title: "롤 매치업 분석 포스트",
-  description: "직접 플레이하며 분석한 170여 명의 챔피언 상성 분석 글 목록입니다.",
-  path: "/posts",
-});
+export const metadata = {
+  ...getCustomMetadata({
+    title: "롤 매치업 분석 포스트",
+    description: "직접 플레이하며 분석한 170여 명의 챔피언 상성 분석 글 목록입니다.",
+    path: "/posts",
+  }),
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 const PostsPage = () => {
 

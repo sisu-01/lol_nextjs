@@ -2,11 +2,17 @@ import { getCustomMetadata } from "@/lib/metadata";
 import Image from "next/image";
 import Link from "next/link";
 
-export const metadata = getCustomMetadata({
-  title: "플레이 가이드",
-  description: "챔피언 상성을 맞추는 게임 도전! 롤든벨의 플레이 방법과 고득점을 위한 팁을 확인해보세요.",
-  path: "/guide",
-});
+export const metadata = {
+  ...getCustomMetadata({
+    title: "플레이 가이드",
+    description: "챔피언 상성을 맞추는 게임 도전! 롤든벨의 플레이 방법과 고득점을 위한 팁을 확인해보세요.",
+    path: "/guide",
+  }),
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 const GuidePage = () => {
   return (
