@@ -20,7 +20,13 @@ export async function generateMetadata({ params }: PostProps): Promise<Metadata>
   notFound();
   // Next.js 15부터 params는 Promise입니다.
   const { id } = await params;
-  const post = postsData.find((p) => p.id === Number(id));
+  // const post = postsData.find((p) => p.id === Number(id));
+  const post = {
+    id: 112,
+    title: 'zz',
+    date: '2020-20-02',
+    content: 'zz',
+  };
 
   if (!post) {
     return {}; // 포스트가 없으면 빈 메타데이터 반환 (페이지에서 404 처리됨)
