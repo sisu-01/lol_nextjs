@@ -31,13 +31,13 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   title: {
-    default: "도전! 롤든벨 - 실시간 롤 상성 트렌드 퀴즈",
+    default: "도전! 롤든벨",
     template: "%s | 도전! 롤든벨"
   },
   description: ds,
   openGraph: {
     title: {
-      default: "도전! 롤든벨 - 실시간 롤 상성 트렌드 퀴즈",
+      default: "도전! 롤든벨",
       template: "%s | 도전! 롤든벨"
     },
     description: ds,
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: {
-      default: "도전! 롤든벨 - 실시간 롤 상성 트렌드 퀴즈",
+      default: "도전! 롤든벨",
       template: "%s | 도전! 롤든벨"
     },
     description: ds,
