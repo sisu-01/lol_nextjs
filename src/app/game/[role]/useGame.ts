@@ -273,7 +273,7 @@ export const useGame = (role: RoleType) => {
         }
       },
       adDismissed: () => {
-        console.log("광고 건너뜀: 보상을 지급하지 않습니다.");
+        // console.log("광고 건너뜀: 보상을 지급하지 않습니다.");
       },
       adViewed: () => {
         dispatch({ type: "LIFE_UP" });

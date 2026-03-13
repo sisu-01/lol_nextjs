@@ -5,7 +5,6 @@ let currentVolume = 0.5; // 기본 볼륨 50%
 
 if (typeof window !== 'undefined') {
   const savedVolume = localStorage.getItem(STORAGE_KEY);
-  console.log("savedVolume", savedVolume);
   if (savedVolume !== null) {
     currentVolume = parseFloat(savedVolume);
   }
