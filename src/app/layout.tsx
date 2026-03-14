@@ -24,6 +24,7 @@ const subFont = Yeon_Sung({
 });
 
 const ds = "리그 오브 레전드 상성을 알아맞히는 실력 검증 게임";
+const keywordsList = ["도전! 롤든벨", "롤든벨", "스트리머", "유튜브", "치지직", "구글", "lolupdown"];
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.lol-updown.com'),
@@ -35,6 +36,11 @@ export const metadata: Metadata = {
     template: "%s | 도전! 롤든벨"
   },
   description: ds,
+  
+  // 1. 표준 메타 태그 추가
+  applicationName: "도전! 롤든벨",
+  keywords: keywordsList,
+  
   openGraph: {
     title: {
       default: "도전! 롤든벨",
@@ -52,6 +58,13 @@ export const metadata: Metadata = {
       template: "%s | 도전! 롤든벨"
     },
     description: ds,
+  },
+  
+  // 2. 비표준 및 커스텀 메타 태그 추가 (itemprop, article:tag)
+  other: {
+    'itemprop:name': "도전! 롤든벨",
+    'itemprop:description': ds,
+    'article:tag': keywordsList.join(', '),
   },
 };
 
