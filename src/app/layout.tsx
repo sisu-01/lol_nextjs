@@ -84,6 +84,20 @@ export default async function RootLayout({
   return (
     <html lang="ko">
       <Script
+        id="ld-json"
+        strategy="beforeInteractive"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "도전! 롤든벨",
+            "alternateName": "롤든벨",
+            "url": "https://www.lol-updown.com",
+          }),
+        }}
+      />
+      <Script
         async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
         data-ad-client="ca-pub-8512787804038939"
