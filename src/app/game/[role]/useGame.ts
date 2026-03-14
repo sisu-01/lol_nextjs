@@ -177,7 +177,7 @@ export const useGame = (role: RoleType) => {
       '/images/tiers/emerald.png',
       '/images/tiers/diamond.png',
       '/images/tiers/master.png',
-      '/images/tiers/grandmastetr.png',
+      '/images/tiers/grandmaster.png',
       '/images/tiers/challenger.png',
     ];
     TIER_IMAGES.forEach((src) => {
