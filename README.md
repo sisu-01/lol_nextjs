@@ -12,18 +12,18 @@
 ---
 
 ## 📖 프로젝트 소개
-리그 오브 레전드의 챔피언 vs 챔피언 승률 데이터를 기반으로, 유저가 더 높은 승률을 가진 챔피언을 맞추는 퀴즈 게임입니다.
-사용해 본 적 없는 기술 스택들(**Vite, TypeScript, Redis**)과 수익화(**AdSense**)를 경험해 보기 위해 개발되었습니다.
+리그 오브 레전드의 챔피언 vs 챔피언 승률 데이터를 기반으로, 두 챔피언 중 누가 이길지 알아맞추는 웹게임입니다.
+사용해 본 적 없는 기술 스택들(**Vite, TypeScript, Redis**)과 수익화(**AdSense**)를 경험해 보기 위해 기획됐습니다.
 ### 🎯 프로젝트 목표
 1.  **TypeScript 도입:** 수 많은 프로젝트와 기업들이 TypeScript를 도입한 이유를 경험.
 2.  **Redis 활용:** Key-Value 구조의 데이터 처리를 통해 RDBMS와의 차이점 이해 및 속도 최적화.
-3.  **서비스 운영 경험:** 데이터 크롤링부터 배포, 그리고 수익화(**AdSense**) 시도까지 서비스의 전체 흐름 경험.
+3.  **서비스 운영 경험:** 배포, SEO, 수익화(**AdSense**) 시도까지 서비스의 전체 흐름 경험.
 
 ---
 
 ## 🛠 기술 스택
-### 프론트엔드
-<img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=Vite&logoColor=white"/> <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=black"/> <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=TypeScript&logoColor=white"/> <img src="https://img.shields.io/badge/Tailwind CSS-06B6D4?style=flat-square&logo=TailwindCSS&logoColor=white"/>
+### 프론트
+<img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=Vite&logoColor=white"/> <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=black"/>&rarr;<img src="https://img.shields.io/badge/Nextjs-000000?style=flat-square&logo=nextdotjs&logoColor=white" /> <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=TypeScript&logoColor=white"/> <img src="https://img.shields.io/badge/Tailwind CSS-06B6D4?style=flat-square&logo=TailwindCSS&logoColor=white"/>
 
 ### 백엔드
 <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=Python&logoColor=white"/> <img src="https://img.shields.io/badge/Flask-000000?style=flat-square&logo=Flask&logoColor=white"/> <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=Redis&logoColor=white"/> 
@@ -34,6 +34,8 @@
 ---
 
 ## 📓 겪언던 문제, 느낌점, 새로 알게된 정보
+
+실패는 성공의 어머니!!!
 
 ### useReducer의 존재.
 지금까지 React로 개발을 할 때에는 useState가 수 십개는 사용되었다.<br/>
@@ -66,10 +68,18 @@ CloudFlare가 DNS API를 지원하는 것을 알고서 DNS는 CloudFlare 것을 
 난 사이트만 완성하면 Adsense를 달아서 돈을 벌 수 있을거라 기대했다.<br/>
 하지만 내 웹사이트는 Adsense 측이 보기에 내용도 없고 버튼만 달랑 몇 개 있는 가치 없는 웹사이트였다.<br/>
 때문에 Adsense 심사를 하는 족족 **<게시자 콘텐츠가 없는 화면에 Google 게재 광고, 가치가 별로 없는 콘텐츠>** 라며 반려당했다.<br/> 
-이대로 실패인가 생각했지만 **H5 Games Ads** 라는 것을 알게되어 이것도 시도해봤다.<br/>
-결과는 이것도 실패였다...<br/>
-시간이 나면 방도를 찾을 것이다.
+Adsense 약관을 명시하고, 텍스트가 가득 담긴 가짜 포스트들을 작성하고, Google Search Console 색인 등록을 끝마치고 나서야 마침내 Adsense 승인을 받을 수 있었다.<br/>
+반려 사유를 알지 못해 계속 박치기를 한 까닭에 이 부분에서 가장 많은 시간이 지체되었다.<br/>
+그래도 이 경험을 통해 나는 Adsense 승인 기준을 꽤 잘 이해한 것 같다.<br/>
+이후 **H5 Games Ads** 를 도입하여 광고를 보면 추가 목숨을 주는 reward형 광고도 추가하였다.<br/>
+
+### Vite 배포 겁나 빠르다 ㄷㄷㄷ.
+Vercel에 배포할 때 40초식 걸리는게 기본인 줄 알았다.
+하지만 Vite로 배포해보니 10~20초만에 배포가 끝나 날 당황하게 만들었다.
+
+### 첫 배포가 중요하다.
+구글 색인이 등록되어야 Adsense 승인이 난다는 글을 참고하여 모든 페이지의 색인을 등록했다.
+이후 Adsense 승인을 받은 뒤에 구글 검색 결과 수정을 위해 사이트의 정보나 favicon을 변경하여 색인 재등록을 했지만 빠르게 반영되지 않았다.
 
 ### 나노바나나는 신이다.
-
 내 전속 디자이너 한 명이 생긴 기분이다.
