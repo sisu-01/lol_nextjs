@@ -91,9 +91,13 @@ export default async function RootLayout({
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebSite",
+            "@id": "https://www.lol-updown.com",
             "name": "도전! 롤든벨",
-            "alternateName": "롤든벨",
+            "description":"리그 오브 레전드 상성을 알아맞히는 실력 검증 게임.",
             "url": "https://www.lol-updown.com",
+            "inLanguage":"ko",
+            "logo": "https://www.lol-updown.com/apple-icon.png",
+            "alternateName": "롤든벨",
           }),
         }}
       />
