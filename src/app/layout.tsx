@@ -23,7 +23,7 @@ const subFont = Yeon_Sung({
   subsets: ["latin"],
 });
 
-const ds = "리그 오브 레전드 상성을 알아맞히는 실력 검증 게임";
+const DESCRIPTION = "리그 오브 레전드 상성을 알아맞히는 실력 검증 게임";
 const keywordsList = ["도전! 롤든벨", "롤든벨", "스트리머", "유튜브", "치지직", "구글", "lolupdown"];
 
 export const metadata: Metadata = {
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     default: "도전! 롤든벨",
     template: "%s | 도전! 롤든벨"
   },
-  description: ds,
+  description: DESCRIPTION,
   
   // 1. 표준 메타 태그 추가
   applicationName: "도전! 롤든벨",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
       default: "도전! 롤든벨",
       template: "%s | 도전! 롤든벨"
     },
-    description: ds,
+    description: DESCRIPTION,
     url: new URL(`https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`),
     siteName: "도전! 롤든벨",
     type: "website",
@@ -57,13 +57,13 @@ export const metadata: Metadata = {
       default: "도전! 롤든벨",
       template: "%s | 도전! 롤든벨"
     },
-    description: ds,
+    description: DESCRIPTION,
   },
   
   // 2. 비표준 및 커스텀 메타 태그 추가 (itemprop, article:tag)
   other: {
     'itemprop:name': "도전! 롤든벨",
-    'itemprop:description': ds,
+    'itemprop:description': DESCRIPTION,
     'article:tag': keywordsList.join(', '),
   },
 };
@@ -93,7 +93,7 @@ export default async function RootLayout({
             "@type": "WebSite",
             "@id": "https://www.lol-updown.com",
             "name": "도전! 롤든벨",
-            "description":"리그 오브 레전드 상성을 알아맞히는 실력 검증 게임.",
+            "description": DESCRIPTION,
             "url": "https://www.lol-updown.com",
             "inLanguage":"ko",
             "logo": "https://www.lol-updown.com/apple-icon.png",
@@ -119,6 +119,12 @@ export default async function RootLayout({
       <meta charSet="utf-8" />
       <meta name='viewport' content='width=device-width, initial-scale=1.0' />
       <body className={`${notoFont.variable} ${subFont.variable} antialiased`}>
+        <div style={{ display: 'none' }}>
+          <h1>도전! 롤든벨 - 리그 오브 레전드 게임 {DESCRIPTION}</h1>
+          <h2>도전! 롤든벨 - {DESCRIPTION}</h2>
+          <h2>{DESCRIPTION}</h2>
+          <h2>메인 - 1</h2>
+        </div>
         <div className="flex flex-col h-dvh">
           {/* <Header /> */}
           <AdBar position="header" isMobile={isMobile} />
