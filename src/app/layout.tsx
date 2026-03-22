@@ -120,10 +120,7 @@ export default async function RootLayout({
       <meta name='viewport' content='width=device-width, initial-scale=1.0' />
       <body className={`${notoFont.variable} ${subFont.variable} antialiased`}>
         <div style={{ display: 'none' }}>
-          <h1>도전! 롤든벨 - 리그 오브 레전드 게임 {DESCRIPTION}</h1>
-          <h2>도전! 롤든벨 - {DESCRIPTION}</h2>
-          <h2>{DESCRIPTION}</h2>
-          <h2>메인 - 1</h2>
+          <h1>{DESCRIPTION}</h1>
         </div>
         <div className="flex flex-col h-dvh">
           {/* <Header /> */}
