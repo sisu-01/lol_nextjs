@@ -2,27 +2,27 @@
 
 import Image from "next/image";
 import GameSet from "@/components/GameSet/GameSet";
-import { useState } from "react";
+// import { useState } from "react";
 
-const BG_URLS = [
+// const BG_URLS = [
   // "https://media.giphy.com/media/3etP8HqLPVixUc9Y3s/giphy.gif",
   // "https://media.giphy.com/media/BmmfETghGOPrW/giphy.gif",
-  "https://media.giphy.com/media/26Ec7TKFZ9XED3MM8/giphy.gif",
-  "https://media.giphy.com/media/5h9jqglckLc1HQbPvT/giphy.gif",
-  "https://media.giphy.com/media/fFxiqBNam2UtAYa9Oi/giphy.gif",
-  "https://media.giphy.com/media/fvxUIwNJRaj8UQe3ti/giphy.gif",
-  "https://media.giphy.com/media/KBPu6znQu2DsgPvOpm/giphy.gif",
-  "https://media.giphy.com/media/jU2wR5WIzi1wnoHJkx/giphy.gif",
-  "https://media.giphy.com/media/i8ztw1wqGxqRysjAnZ/giphy.gif"
-];
+  // "https://media.giphy.com/media/26Ec7TKFZ9XED3MM8/giphy.gif",
+  // "https://media.giphy.com/media/5h9jqglckLc1HQbPvT/giphy.gif",
+  // "https://media.giphy.com/media/fFxiqBNam2UtAYa9Oi/giphy.gif",
+  // "https://media.giphy.com/media/fvxUIwNJRaj8UQe3ti/giphy.gif",
+  // "https://media.giphy.com/media/KBPu6znQu2DsgPvOpm/giphy.gif",
+  // "https://media.giphy.com/media/jU2wR5WIzi1wnoHJkx/giphy.gif",
+  // "https://media.giphy.com/media/i8ztw1wqGxqRysjAnZ/giphy.gif"
+// ];
 
 export default function Home() {
-  const [randomIndex] = useState(() => Math.floor(Math.random() * BG_URLS.length));
+  // const [randomIndex] = useState(() => Math.floor(Math.random() * BG_URLS.length));
   
   return (
     <div suppressHydrationWarning className="flex w-full h-full justify-between items-center overflow-auto"
       style={{
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(${BG_URLS[randomIndex]})`,
+        // backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(${BG_URLS[randomIndex]})`,
         backgroundColor: "#3f3f3f",
         backgroundPosition: "center",
         backgroundSize: "cover",
