@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Noto_Sans_KR, Yeon_Sung } from "next/font/google";
+import { Yeon_Sung } from "next/font/google";
 import { GoogleAnalytics } from '@next/third-parties/google'
 import "./globals.css";
 // import Header from "@/components/layout/Header/Header";
@@ -8,13 +8,6 @@ import Script from "next/script";
 import AdBar from "@/components/layout/Adbar/Adbar";
 import { headers } from "next/headers";
 import H5Adsense from "@/components/H5Adsense/H5Adsense";
-
-// Noto Sans KR 설정 (기본 폰트)
-const notoFont = Noto_Sans_KR({
-  variable: "--font-noto", // CSS 변수명
-  weight: ["400", "700"], // 사용할 굵기 선택
-  subsets: ["latin"], // 한글 폰트라도 subsets는 기본적으로 설정해야 합니다.
-});
 
 // East Sea Dokdo 설정 (특정 클래스용)
 const subFont = Yeon_Sung({
@@ -83,42 +76,51 @@ export default async function RootLayout({
 
   return (
     <html lang="ko">
-      <Script
-        id="ld-json"
-        strategy="beforeInteractive"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "@id": "https://www.lol-updown.com",
-            "name": "도전! 롤든벨",
-            "description": DESCRIPTION,
-            "url": "https://www.lol-updown.com",
-            "inLanguage":"ko",
-            "logo": "https://www.lol-updown.com/apple-icon.png",
-            "alternateName": "롤든벨",
-          }),
-        }}
-      />
-      <Script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-        data-ad-client="ca-pub-8512787804038939"
-        crossOrigin="anonymous"
-        strategy="lazyOnload"
-        data-ad-frequency-hint="120s"
-        // data-adbreak-test="on"
-      />
-      <Script id="adsense-h5-init" strategy="afterInteractive">
-        {`
-          window.adsbygoogle = window.adsbygoogle || [];
-          window.adBreak = window.adConfig = function(o) { adsbygoogle.push(o); };
-        `}
-      </Script>
+      <head>
+        <link
+          rel="preload"
+          href="/fonts/YeonSung-Regular.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <Script
+          id="ld-json"
+          strategy="beforeInteractive"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "@id": "https://www.lol-updown.com",
+              "name": "도전! 롤든벨",
+              "description": DESCRIPTION,
+              "url": "https://www.lol-updown.com",
+              "inLanguage":"ko",
+              "logo": "https://www.lol-updown.com/apple-icon.png",
+              "alternateName": "롤든벨",
+            }),
+          }}
+        />
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+          data-ad-client="ca-pub-8512787804038939"
+          crossOrigin="anonymous"
+          strategy="lazyOnload"
+          data-ad-frequency-hint="120s"
+          // data-adbreak-test="on"
+        />
+        <Script id="adsense-h5-init" strategy="afterInteractive">
+          {`
+            window.adsbygoogle = window.adsbygoogle || [];
+            window.adBreak = window.adConfig = function(o) { adsbygoogle.push(o); };
+          `}
+        </Script>
+      </head>
       <meta charSet="utf-8" />
       <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-      <body className={`${notoFont.variable} ${subFont.variable} antialiased`}>
+      <body className={`${subFont.variable} antialiased`}>
         <div style={{ display: 'none' }}>
           <h1>{DESCRIPTION}</h1>
         </div>
