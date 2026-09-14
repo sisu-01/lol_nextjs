@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Yeon_Sung } from "next/font/google";
 import { GoogleAnalytics } from '@next/third-parties/google'
 import "./globals.css";
 // import Header from "@/components/layout/Header/Header";
@@ -8,13 +7,6 @@ import Script from "next/script";
 import AdBar from "@/components/layout/Adbar/Adbar";
 import { headers } from "next/headers";
 import H5Adsense from "@/components/H5Adsense/H5Adsense";
-
-// East Sea Dokdo 설정 (특정 클래스용)
-const subFont = Yeon_Sung({
-  variable: "--font-sub",
-  weight: "400",
-  subsets: ["latin"],
-});
 
 const DESCRIPTION = "리그 오브 레전드 상성을 알아맞히는 실력 검증 게임";
 const keywordsList = ["도전! 롤든벨", "롤든벨", "스트리머", "유튜브", "치지직", "구글", "lolupdown"];
@@ -120,7 +112,7 @@ export default async function RootLayout({
       </head>
       <meta charSet="utf-8" />
       <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-      <body className={`${subFont.variable} antialiased`}>
+      <body className={`antialiased`}>
         <div style={{ display: 'none' }}>
           <h1>{DESCRIPTION}</h1>
         </div>
