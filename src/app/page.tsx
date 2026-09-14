@@ -40,6 +40,7 @@ export default function Home() {
             className="h-auto w-full max-w-150" 
             alt="도전! 롤든벨 로고" 
             priority // 메인 로고이므로 우선 순위 로드
+            fetchPriority="high"
           />
         </header>
         <div>
